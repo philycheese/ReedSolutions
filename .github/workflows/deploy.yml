@@ -32,8 +32,8 @@ jobs:
 
       - name: Build static site
         env:
-          # GitHub Pages base path is "/<repo>" unless you use a custom domain
-          BASE_PATH: /${{ github.event.repository.name }}
+          # Custom domains are served from "/" (no "/<repo>" prefix)
+          BASE_PATH: ""
         run: npm run build
 
       - name: Disable Jekyll
