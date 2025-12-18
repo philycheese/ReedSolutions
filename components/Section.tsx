@@ -19,7 +19,7 @@ type SectionProps = React.PropsWithChildren<{
 
 export default function Section({ id, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn("py-16 md:py-24", className)}>
+    <section id={id} className={cn("py-14 md:py-20", className)}>
       {children}
     </section>
   );
