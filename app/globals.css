@@ -2,34 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+html {
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: radial-gradient(circle at top, rgba(15, 98, 254, 0.08), transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(10, 10, 10, 0.07), transparent 35%),
-    #f8f8f4;
-  color: #0a0a0a;
-  min-height: 100vh;
+  background-color: theme("colors.canvas");
+  color: theme("colors.ink");
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 ::selection {
-  background: rgba(15, 98, 254, 0.2);
+  background: rgba(15, 118, 110, 0.18);
 }
 
-@layer base {
-  * {
-    @apply border-black/5;
-  }
-
-  body {
-    @apply font-sans antialiased;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Better default focus treatment */
+:focus-visible {
+  outline: 2px solid rgba(15, 118, 110, 0.65);
+  outline-offset: 2px;
 }

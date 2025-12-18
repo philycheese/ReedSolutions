@@ -1,22 +1,36 @@
 import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}", "./content/**/*.{ts,tsx}"],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        mono: ["var(--font-mono)", ...fontFamily.mono],
-      },
       colors: {
-        canvas: "#f8f8f4",
-        ink: "#0a0a0a",
-        accent: "#0f62fe",
-        muted: "#6b7280",
+        canvas: "#F7F6F2",
+        ink: "#121212",
+        muted: "#3B3B3B",
+        line: "#E8E5DD",
+        accent: {
+          DEFAULT: "#0F766E",
+          dark: "#0B5D55",
+        },
+        sand: "#D4CFC1",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      borderRadius: {
+        md: "10px",
+        lg: "12px",
       },
       boxShadow: {
-        subtle: "0 10px 30px -20px rgba(0,0,0,0.3)",
+        hairline: "0 1px 0 rgba(18,18,18,0.06)",
+        lift: "0 12px 30px rgba(18,18,18,0.06)",
+      },
+      letterSpacing: {
+        tightish: "-0.02em",
+      },
+      maxWidth: {
+        content: "1280px",
       },
     },
   },
@@ -24,3 +38,4 @@ const config: Config = {
 };
 
 export default config;
+
