@@ -2,6 +2,7 @@ import Image from "next/image";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import HardLink from "@/components/HardLink";
+import PortfolioTile from "@/components/PortfolioTile";
 import { contactEmail } from "@/lib/content";
 
 const projects = [
@@ -11,6 +12,8 @@ const projects = [
       "A modern care platform that brings budget management and Personal Assistant coordination together. Indi replaces fragmented tools with clear financial oversight and simple communication. Built to grow alongside real-world care needs.",
     tags: ["Web App", "Next.js", "Serverless", "Cloud"],
     image: { src: "/images/indi.png", alt: "Abstract placeholder screenshot for an operations dashboard." },
+    details:
+      "Indi is a personal care management platform designed to give clients clarity, control, and confidence over their care budgets and support networks.\n\nThe app brings together financial oversight and human coordination in one place. Clients can track their care budget in real time, understand where money is being spent, and manage payments without friction. At the same time, they can meet, organise, and communicate with Personal Assistants (PAs), keeping day-to-day care simple and transparent.\n\nIndi focuses on calm, readable design and practical workflows: clear budget visualisation, straightforward payment history, and intuitive contact and group management. Rather than overwhelming users with complexity, it surfaces the information that matters most, when it matters.\n\nBuilt as a foundation for long-term growth, the platform is designed to evolve alongside changing care needs — supporting ongoing development, new features, and deeper integrations without locking users into rigid systems.\n\nThis project demonstrates how thoughtful UX, robust data handling, and scalable architecture can come together to solve real, human problems through custom software.",
   }
 ] as const;
 
@@ -52,34 +55,7 @@ export default function PortfolioPage() {
         <Container>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
             {projects.map((project, idx) => (
-              <Reveal key={project.title} className="md:col-span-4" delay={idx * 0.05}>
-                <div className="group overflow-hidden rounded-lg border-4 border-accent/20 bg-white/60 shadow-hairline transition-colors transition-shadow hover:border-accent/40 hover:shadow-lift">
-                  <div className="relative aspect-[16/10] border-b border-accent/15">
-                    <Image
-                      src={project.image.src}
-                      alt={project.image.alt}
-                      fill
-                      className="object-cover grayscale-[35%] contrast-110 transition-transform duration-500 group-hover:scale-[1.02]"
-                      sizes="(min-width: 1024px) 30vw, 92vw"
-                      priority={idx === 0}
-                    />
-                  </div>
-                  <div className="space-y-3 p-6">
-                    <h2 className="text-lg font-semibold tracking-tightish">{project.title}</h2>
-                    <p className="text-sm leading-relaxed text-muted">{project.summary}</p>
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-md border border-line bg-canvas px-2 py-1 text-xs text-muted"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
+              <PortfolioTile key={project.title} project={project} delay={idx * 0.05} />
             ))}
           </div>
         </Container>

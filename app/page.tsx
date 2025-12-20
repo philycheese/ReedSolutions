@@ -42,13 +42,13 @@ export default function HomePage() {
             </div>
 
             <Reveal className="md:col-span-6" delay={0.08}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-white shadow-hairline">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-canvas">
                 <Image
-                  src="/images/hero.jpg"
+                  src="/images/stock3.png"
                   alt="Professionals collaborating on software delivery."
                   fill
                   priority
-                  className="object-cover grayscale-[25%] contrast-110"
+                  className="object-contain p-6"
                   sizes="(min-width: 768px) 50vw, 92vw"
                 />
               </div>
