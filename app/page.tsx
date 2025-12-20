@@ -3,6 +3,7 @@ import Link from "next/link";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import ProcessSteps from "@/components/ProcessSteps";
+import HardLink from "@/components/HardLink";
 import { contactEmail } from "@/lib/content";
 
 export default function HomePage() {
@@ -30,18 +31,24 @@ export default function HomePage() {
                   >
                     Get in touch
                   </Link>
+                  <HardLink
+                    href="/portfolio/"
+                    className="inline-flex items-center justify-center rounded-lg border border-accent bg-white px-5 py-3 text-sm font-medium text-accent shadow-hairline transition-colors hover:bg-accent hover:text-white"
+                  >
+                    See our work
+                  </HardLink>
                 </div>
               </Reveal>
             </div>
 
             <Reveal className="md:col-span-6" delay={0.08}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-white shadow-hairline">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-canvas">
                 <Image
-                  src="/images/hero.jpg"
+                  src="/images/stock3.png"
                   alt="Professionals collaborating on software delivery."
                   fill
                   priority
-                  className="object-cover grayscale-[25%] contrast-110"
+                  className="object-contain p-6"
                   sizes="(min-width: 768px) 50vw, 92vw"
                 />
               </div>
