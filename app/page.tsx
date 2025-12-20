@@ -30,6 +30,12 @@ export default function HomePage() {
                   >
                     Get in touch
                   </Link>
+                  <Link
+                    href="/portfolio"
+                    className="inline-flex items-center justify-center rounded-lg border border-accent bg-white px-5 py-3 text-sm font-medium text-accent shadow-hairline transition-colors hover:bg-accent hover:text-white"
+                  >
+                    See our work
+                  </Link>
                 </div>
               </Reveal>
             </div>
