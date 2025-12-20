@@ -9,7 +9,7 @@ const projects = [
     title: "Indi - revolutionary personal care platform",
     summary:
       "A modern care platform that brings budget management and Personal Assistant coordination together. Indi replaces fragmented tools with clear financial oversight and simple communication. Built to grow alongside real-world care needs.",
-    tags: ["Next.js", "Serverless", "Cloud"],
+    tags: ["Web App", "Next.js", "Serverless", "Cloud"],
     image: { src: "/images/indi.png", alt: "Abstract placeholder screenshot for an operations dashboard." },
   }
 ] as const;
@@ -95,8 +95,7 @@ export default function PortfolioPage() {
                     Want to see relevant examples?
                   </h2>
                   <p className="mt-4 text-sm leading-relaxed text-muted">
-                    Tell us what you’re building and we’ll share the closest work we can (including details
-                    we don’t publish publicly).
+                    Tell us what you’re building and we’ll share the closest work we can.
                   </p>
                 </div>
 
