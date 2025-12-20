@@ -21,7 +21,7 @@ export default function HomePage() {
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
                 Reed Solutions is a Swiss-based software studio delivering high-quality custom solutions for teams worldwide. 
                 </p>
-                <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">We design, build, and maintain software.
+                <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">We design, build, and maintain your software.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
@@ -81,7 +81,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 max-w-[700px] text-sm leading-relaxed text-muted">
               If you need help building software, integrating
-              systems, or modernising an existing codebase, reach out.
+              systems, or modernising an existing project, reach out.
             </p>
           </Reveal>
 
@@ -89,23 +89,75 @@ export default function HomePage() {
             {[
               {
                 title: "Product development",
-                copy: "Web apps, internal tools, and APIs — designed for long-term ownership.",
+                copy: "Web apps, internal tools, and APIs - designed for long-term ownership.",
+                icon: (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" />
+                    <path d="M8 19v-2m8 2v-2" />
+                    <path d="M7 9h10" />
+                  </svg>
+                ),
               },
               {
                 title: "Integrations",
                 copy: "Connect billing, CRM, analytics, and internal systems with reliable interfaces.",
+                icon: (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M10 13a4 4 0 0 1 0-6l1.2-1.2a4 4 0 0 1 5.6 5.6L16 12" />
+                    <path d="M14 11a4 4 0 0 1 0 6l-1.2 1.2a4 4 0 0 1-5.6-5.6L8 12" />
+                  </svg>
+                ),
               },
               {
                 title: "Cloud & modernisation",
                 copy: "Improve performance, security, and operability without unnecessary rewrites.",
+                icon: (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M7.5 18h9a4 4 0 0 0 .4-7.98A6 6 0 0 0 5.2 12.2 3.5 3.5 0 0 0 7.5 18Z" />
+                    <path d="M12 10v6" />
+                    <path d="M9.5 13.5 12 16l2.5-2.5" />
+                  </svg>
+                ),
               },
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-line bg-white/50 p-6 shadow-hairline md:col-span-4"
+                className="group rounded-lg border border-line bg-white/60 p-6 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
               >
-                <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.copy}</p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/15 bg-accent/10">
+                    {item.icon}
+                  </div>
+                  <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{item.copy}</p>
               </div>
             ))}
           </div>
