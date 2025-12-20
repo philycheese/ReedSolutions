@@ -3,6 +3,7 @@ import Link from "next/link";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import ProcessSteps from "@/components/ProcessSteps";
+import HardLink from "@/components/HardLink";
 import { contactEmail } from "@/lib/content";
 
 export default function HomePage() {
@@ -30,12 +31,12 @@ export default function HomePage() {
                   >
                     Get in touch
                   </Link>
-                  <Link
-                    href="/portfolio"
+                  <HardLink
+                    href="/portfolio/"
                     className="inline-flex items-center justify-center rounded-lg border border-accent bg-white px-5 py-3 text-sm font-medium text-accent shadow-hairline transition-colors hover:bg-accent hover:text-white"
                   >
                     See our work
-                  </Link>
+                  </HardLink>
                 </div>
               </Reveal>
             </div>

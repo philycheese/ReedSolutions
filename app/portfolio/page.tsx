@@ -1,31 +1,17 @@
 import Image from "next/image";
-import Link from "next/link";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import HardLink from "@/components/HardLink";
 import { contactEmail } from "@/lib/content";
 
 const projects = [
   {
-    title: "Operations dashboard for a logistics team",
+    title: "Indi - revolutionary personal care platform",
     summary:
-      "A fast internal web app to track shipments, exceptions, and SLAs with reliable data sync and role-based access.",
-    tags: ["Next.js", "PostgreSQL", "Cloud"],
-    image: { src: "/images/work-1.jpg", alt: "Abstract placeholder screenshot for an operations dashboard." },
-  },
-  {
-    title: "Payments + CRM integration for a services business",
-    summary:
-      "Automated billing workflows and customer lifecycle updates across Stripe and a CRM, reducing manual work and mistakes.",
-    tags: ["Integrations", "Automation", "Reliability"],
-    image: { src: "/images/work-2.jpg", alt: "Abstract placeholder screenshot representing integrations." },
-  },
-  {
-    title: "Modernisation of a legacy web platform",
-    summary:
-      "Incremental refactor and performance improvements with safer deployments, better observability, and a clearer codebase.",
-    tags: ["Modernisation", "Performance", "Observability"],
-    image: { src: "/images/work-3.jpg", alt: "Abstract placeholder screenshot representing modernisation work." },
-  },
+      "A modern care platform that brings budget management and Personal Assistant coordination together. Indi replaces fragmented tools with clear financial oversight and simple communication. Built to grow alongside real-world care needs.",
+    tags: ["Next.js", "Serverless", "Cloud"],
+    image: { src: "/images/indi.png", alt: "Abstract placeholder screenshot for an operations dashboard." },
+  }
 ] as const;
 
 export default function PortfolioPage() {
@@ -45,18 +31,18 @@ export default function PortfolioPage() {
               we can replace them with real case studies as you share what’s okay to publish.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
+              <HardLink
                 href="/#contact"
                 className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
               >
                 Get in touch
-              </Link>
-              <Link
+              </HardLink>
+              <HardLink
                 href="/"
                 className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
               >
                 Back to home
-              </Link>
+              </HardLink>
             </div>
           </Reveal>
         </Container>
@@ -67,8 +53,8 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
             {projects.map((project, idx) => (
               <Reveal key={project.title} className="md:col-span-4" delay={idx * 0.05}>
-                <div className="group overflow-hidden rounded-lg border border-line bg-white/60 shadow-hairline transition-shadow hover:shadow-lift">
-                  <div className="relative aspect-[16/10] border-b border-line">
+                <div className="group overflow-hidden rounded-lg border-4 border-accent/20 bg-white/60 shadow-hairline transition-colors transition-shadow hover:border-accent/40 hover:shadow-lift">
+                  <div className="relative aspect-[16/10] border-b border-accent/15">
                     <Image
                       src={project.image.src}
                       alt={project.image.alt}
@@ -115,12 +101,12 @@ export default function PortfolioPage() {
                 </div>
 
                 <div className="md:col-span-4 md:justify-self-end">
-                  <Link
+                  <HardLink
                     href={`mailto:${contactEmail}?subject=Portfolio%20request`}
                     className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
                   >
                     Email us
-                  </Link>
+                  </HardLink>
                 </div>
               </div>
             </div>
