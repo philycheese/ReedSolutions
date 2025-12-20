@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
+import ProcessSteps from "@/components/ProcessSteps";
 import { contactEmail } from "@/lib/content";
 
 export default function HomePage() {
@@ -48,14 +49,20 @@ export default function HomePage() {
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-12 grid grid-cols-1 gap-4 border-y border-line py-8 md:grid-cols-12 md:gap-0">
-              {[
-                { title: "Clear communication", copy: "Simple plans and regular check-ins." },
-                { title: "Pragmatic engineering", copy: "Make progress without cutting corners." },
-                { title: "Maintainable code", copy: "Systems that stay easy to change." },
-                { title: "Reliable delivery", copy: "Small steps, tested and deployed." },
-              ].map((item) => (
-                <div key={item.title} className="md:col-span-3 md:px-6">
+            <div className="mt-12 grid grid-cols-1 gap-4 border-y border-line py-8 md:grid-cols-3 md:gap-0">
+            {[{
+                title: "Built together",
+                copy: "You can be as hands-on or hands-off as you like. we work closely with you and adapt quickly as needs change."
+              },
+              {
+                title: "Long-term support",
+                copy: "We continue to evolve and improve your software as your requirements grow."
+              },
+              {
+                title: "Built with your budget in mind",
+                copy: "We focus on what delivers real value, avoiding unnecessary complexity and wasted spend."
+              }].map((item) => (
+                <div key={item.title} className="md:px-6">
                   <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
                   <p className="mt-2 text-sm text-muted">{item.copy}</p>
                 </div>
@@ -101,6 +108,25 @@ export default function HomePage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted">{item.copy}</p>
               </div>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-accent py-16 text-canvas md:py-24">
+        <Container>
+          <Reveal>
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-canvas/70">How we do it</p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-tightish md:text-6xl">
+              How we do it
+            </h2>
+            <p className="mt-6 max-w-[720px] text-sm leading-relaxed text-canvas/70 md:text-base">
+              A straightforward delivery approach that keeps scope clear, communication simple, and
+              quality high.
+            </p>
+          </Reveal>
+
+          <div className="mt-12">
+            <ProcessSteps variant="dark" />
           </div>
         </Container>
       </Section>
