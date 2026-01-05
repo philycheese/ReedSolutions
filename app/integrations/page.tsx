@@ -40,7 +40,7 @@ export default function IntegrationsPage() {
               </HardLink>
               <HardLink
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
+                className="inline-flex items-center justify-center rounded-lg bg-brand-yellow px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-brand-yellow/90"
               >
                 Get in touch
               </HardLink>

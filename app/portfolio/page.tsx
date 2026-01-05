@@ -35,7 +35,7 @@ export default function PortfolioPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <HardLink
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
+                className="inline-flex items-center justify-center rounded-lg bg-brand-yellow px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-brand-yellow/90"
               >
                 Get in touch
               </HardLink>
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
                 <div className="md:col-span-4 md:justify-self-end">
                   <HardLink
                     href={`mailto:${contactEmail}?subject=Portfolio%20request`}
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
+                    className="inline-flex w-full items-center justify-center rounded-lg bg-brand-yellow px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-brand-yellow/90 md:w-auto"
                   >
                     Email us
                   </HardLink>

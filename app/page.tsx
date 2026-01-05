@@ -27,13 +27,13 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href="/#contact"
-                    className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
+                    className="inline-flex items-center justify-center rounded-lg bg-brand-yellow px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-brand-yellow/90"
                   >
                     Get in touch
                   </Link>
                   <HardLink
                     href="/portfolio/"
-                    className="inline-flex items-center justify-center rounded-lg border border-accent bg-white px-5 py-3 text-sm font-medium text-accent shadow-hairline transition-colors hover:bg-accent hover:text-white"
+                    className="inline-flex items-center justify-center rounded-lg border border-brand-yellow bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-brand-yellow/20"
                   >
                     See our work
                   </HardLink>
@@ -57,7 +57,7 @@ export default function HomePage() {
 
           <Reveal delay={0.1}>
             <div className="mt-12 overflow-hidden rounded-xl border border-line bg-white/70">
-              <div className="h-1.5 bg-brand-yellow" />
+              <div className="h-1.5 bg-accent" />
               <div className="px-6 py-10 md:px-10">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
                   {[
@@ -234,7 +234,7 @@ export default function HomePage() {
                 <div className="md:col-span-4 md:justify-self-end">
                   <Link
                     href={`mailto:${contactEmail}?subject=Hello%20Reed%20Solutions`}
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
+                    className="inline-flex w-full items-center justify-center rounded-lg bg-brand-yellow px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-brand-yellow/90 md:w-auto"
                   >
                     Email us
                   </Link>
