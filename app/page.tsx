@@ -179,7 +179,7 @@ export default function HomePage() {
               How we do it
             </h2>
             <p className="mt-6 max-w-[720px] text-sm leading-relaxed text-canvas/70 md:text-base">
-              A straightforward delivery approach, keeping things clear.
+              A straightforward delivery approach, keeping things clear along the way.
             </p>
           </Reveal>
 
