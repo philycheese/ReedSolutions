@@ -96,7 +96,7 @@ export default function HomePage() {
             {[
               {
                 title: "Product development",
-                copy: "Web apps, internal tools, and APIs - designed for long-term ownership.",
+                copy: "Web apps, internal tools, and APIs - built to last and easy to own.",
                 icon: (
                   <svg
                     aria-hidden="true"
@@ -116,7 +116,7 @@ export default function HomePage() {
               },
               {
                 title: "Integrations",
-                copy: "Connect billing, CRM, analytics, and internal systems with reliable interfaces.",
+                copy: "Bring your tools and platforms together into a single, coherent system.",
                 icon: (
                   <svg
                     aria-hidden="true"
