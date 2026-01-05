@@ -16,10 +16,6 @@ const defaultSteps = [
     copy: "We align on scope and milestones, deepen context, and keep decision-making simple with transparent communication.",
   },
   {
-    title: "Team setup",
-    copy: "We assemble the right mix of expertise, establish delivery cadence, and set up tooling so execution stays predictable.",
-  },
-  {
     title: "Operation",
     copy: "Incremental releases, monitoring, and continuous improvements—plus support and handover so the system stays healthy.",
   },

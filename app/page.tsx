@@ -135,7 +135,7 @@ export default function HomePage() {
               },
               {
                 title: "Cloud & modernisation",
-                copy: "Improve performance, security, and operability without unnecessary rewrites.",
+                copy: "Improve performance, security, and operability.",
                 icon: (
                   <svg
                     aria-hidden="true"
@@ -179,8 +179,7 @@ export default function HomePage() {
               How we do it
             </h2>
             <p className="mt-6 max-w-[720px] text-sm leading-relaxed text-canvas/70 md:text-base">
-              A straightforward delivery approach that keeps scope clear, communication simple, and
-              quality high.
+              A straightforward delivery approach, keeping things clear.
             </p>
           </Reveal>
 
