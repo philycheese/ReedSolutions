@@ -56,24 +56,31 @@ export default function HomePage() {
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-12 grid grid-cols-1 gap-4 border-y border-line py-8 md:grid-cols-3 md:gap-0">
-            {[{
-                title: "Built together",
-                copy: "You can be as hands-on or hands-off as you like. we work closely with you and adapt quickly as needs change."
-              },
-              {
-                title: "Long-term support",
-                copy: "We continue to evolve and improve your software as your requirements grow."
-              },
-              {
-                title: "Built with your budget in mind",
-                copy: "We focus on what delivers real value, avoiding unnecessary complexity and wasted spend."
-              }].map((item) => (
-                <div key={item.title} className="md:px-6">
-                  <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
-                  <p className="mt-2 text-sm text-muted">{item.copy}</p>
+            <div className="mt-12 overflow-hidden rounded-xl border border-line bg-white/70">
+              <div className="h-1.5 bg-brand-yellow" />
+              <div className="px-6 py-10 md:px-10">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
+                  {[
+                    {
+                      title: "Built together",
+                      copy: "You can be as hands-on or hands-off as you like. We work closely with you and adapt quickly as needs change.",
+                    },
+                    {
+                      title: "Long-term support",
+                      copy: "We continue to evolve and improve your software as your requirements grow.",
+                    },
+                    {
+                      title: "Built with your budget in mind",
+                      copy: "We focus on what delivers real value, avoiding unnecessary complexity and wasted spend.",
+                    },
+                  ].map((item) => (
+                    <div key={item.title} className="md:px-6">
+                      <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
+                      <p className="mt-2 text-sm text-muted">{item.copy}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </Reveal>
         </Container>
@@ -163,7 +170,7 @@ export default function HomePage() {
                 className="group relative block rounded-lg border border-line bg-white/60 p-6 pb-14 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/15 bg-accent/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-brand-yellow/40 bg-brand-yellow/20">
                     {item.icon}
                   </div>
                   <p className="text-sm font-semibold tracking-tightish">{item.title}</p>

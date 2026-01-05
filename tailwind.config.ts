@@ -6,9 +6,15 @@ const config: Config = {
     extend: {
       colors: {
         canvas: "#F7F6F2",
-        ink: "#121212",
-        muted: "#3B3B3B",
+        ink: "#301830",
+        muted: "#473A41",
         line: "#E8E5DD",
+        brand: {
+          turquoise: "#90D0C8",
+          yellow: "#E8C020",
+          burgundy: "#301830",
+          burgundySoft: "#382030",
+        },
         accent: {
           DEFAULT: "#0F766E",
           dark: "#0B5D55",
@@ -23,8 +29,8 @@ const config: Config = {
         lg: "12px",
       },
       boxShadow: {
-        hairline: "0 1px 0 rgba(18,18,18,0.06)",
-        lift: "0 12px 30px rgba(18,18,18,0.06)",
+        hairline: "0 1px 0 rgba(48,24,48,0.06)",
+        lift: "0 12px 30px rgba(48,24,48,0.06)",
       },
       letterSpacing: {
         tightish: "-0.02em",
