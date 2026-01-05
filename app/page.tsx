@@ -33,7 +33,7 @@ export default function HomePage() {
                   </Link>
                   <HardLink
                     href="/portfolio/"
-                    className="inline-flex items-center justify-center rounded-lg border border-accent bg-white px-5 py-3 text-sm font-medium text-accent shadow-hairline transition-colors hover:bg-accent hover:text-white"
+                    className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
                   >
                     See our work
                   </HardLink>
@@ -219,7 +219,8 @@ export default function HomePage() {
       <Section id="contact" className="scroll-mt-24">
         <Container>
           <Reveal>
-            <div className="rounded-lg border border-line bg-white/60 p-8 shadow-hairline md:p-10">
+            <div className="relative rounded-lg border border-line bg-white/60 p-8 shadow-hairline md:p-10">
+              <span aria-hidden="true" className="absolute -top-3 left-8 h-1.5 w-20 bg-brand-yellow md:left-10" />
               <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
                 <div className="md:col-span-8">
                   <h2 className="text-3xl font-semibold tracking-tightish md:text-4xl">

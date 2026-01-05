@@ -3,6 +3,17 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
+    borderRadius: {
+      none: "0px",
+      sm: "0px",
+      DEFAULT: "0px",
+      md: "0px",
+      lg: "0px",
+      xl: "0px",
+      "2xl": "0px",
+      "3xl": "0px",
+      full: "0px",
+    },
     extend: {
       colors: {
         canvas: "#F7F6F2",
@@ -23,10 +34,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-      },
-      borderRadius: {
-        md: "10px",
-        lg: "12px",
       },
       boxShadow: {
         hairline: "0 1px 0 rgba(48,24,48,0.06)",

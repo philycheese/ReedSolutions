@@ -16,17 +16,19 @@ export default function MobileDevelopmentPage() {
         <Container>
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Mobile development</p>
-            <h1 className="mt-4 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
+            <div aria-hidden="true" className="mt-4 h-1.5 w-20 bg-brand-yellow" />
+            <h1 className="mt-5 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
               iOS and Android apps, built to ship and to last.
             </h1>
             <p className="mt-6 max-w-[820px] text-base leading-relaxed text-muted md:text-lg">
-              We build mobile products that feel great in the hand: fast, accessible, and consistent with your brand. The
-              goal isn’t just launch—it’s an app your team can keep improving without fear.
+              We build mobile products that are fast, accessible, and consistent with your brand. The focus is long-term quality, not
+              just getting something into the app store.
             </p>
             <p className="mt-6 max-w-[820px] text-base leading-relaxed text-muted md:text-lg">
-              Whether you’re starting from scratch or improving an existing app, we work in small, low-risk increments with
-              clear milestones and production-ready engineering.
+              Whether starting from scratch or improving an existing app, we work in small, low-risk increments with clear milestones
+              and production-ready engineering.
             </p>
+
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <HardLink
@@ -171,7 +173,8 @@ export default function MobileDevelopmentPage() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
             <Reveal className="md:col-span-4">
               <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Also</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tightish md:text-4xl">Often paired with</h2>
+              <div aria-hidden="true" className="mt-4 h-1.5 w-20 bg-brand-yellow" />
+              <h2 className="mt-5 text-3xl font-semibold tracking-tightish md:text-4xl">Often paired with</h2>
             </Reveal>
 
             <Reveal className="md:col-span-8" delay={0.05}>

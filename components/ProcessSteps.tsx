@@ -50,7 +50,7 @@ export default function ProcessSteps({
 
   const copyClassName = cn("mt-3 text-sm leading-relaxed", isDark ? "text-canvas/80" : "text-muted");
 
-  const numberClassName = cn("text-xs font-medium", isDark ? "text-canvas/70" : "text-muted");
+  const numberClassName = cn("text-xs font-medium", isDark ? "text-brand-yellow/90" : "text-muted");
 
   return (
     <div className={cn("grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-6", className)}>

@@ -16,7 +16,8 @@ export default function IntegrationsPage() {
         <Container>
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Integrations</p>
-            <h1 className="mt-4 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
+            <div aria-hidden="true" className="mt-4 h-1.5 w-20 bg-brand-yellow" />
+            <h1 className="mt-5 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
               Connect systems. Simplify work.
             </h1>
             <p className="mt-6 max-w-[820px] text-base leading-relaxed text-muted md:text-lg">
@@ -141,7 +142,7 @@ export default function IntegrationsPage() {
         </Container>
       </Section>
 
-      <Section className="bg-canvas">
+      <Section>
         <Container>
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
             <Reveal className="md:col-span-4">
@@ -163,6 +164,41 @@ export default function IntegrationsPage() {
                 <p className="text-base leading-relaxed text-muted md:text-lg">
                   Automation should reduce complexity, not move it somewhere else.
                 </p>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-canvas">
+        <Container>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
+            <Reveal className="md:col-span-4">
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Also</p>
+              <div aria-hidden="true" className="mt-4 h-1.5 w-20 bg-brand-yellow" />
+              <h2 className="mt-5 text-3xl font-semibold tracking-tightish md:text-4xl">Often paired with</h2>
+            </Reveal>
+
+            <Reveal className="md:col-span-8" delay={0.05}>
+              <div className="space-y-6">
+                <p className="text-base leading-relaxed text-muted md:text-lg">
+                  Integrations work best when the surrounding product experience is clear and consistent. We often pair this
+                  work with web and mobile development so everything feels cohesive end-to-end.
+                </p>
+                <div className="flex flex-col gap-3">
+                  <HardLink
+                    href="/product-development"
+                    className="inline-flex items-center gap-2 text-base font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors hover:decoration-ink md:text-lg"
+                  >
+                    Web development <span aria-hidden="true">→</span>
+                  </HardLink>
+                  <HardLink
+                    href="/mobile-development"
+                    className="inline-flex items-center gap-2 text-base font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors hover:decoration-ink md:text-lg"
+                  >
+                    Mobile development <span aria-hidden="true">→</span>
+                  </HardLink>
+                </div>
               </div>
             </Reveal>
           </div>

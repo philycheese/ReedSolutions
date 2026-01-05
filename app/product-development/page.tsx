@@ -16,7 +16,8 @@ export default function ProductDevelopmentPage() {
         <Container>
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Web development</p>
-            <h1 className="mt-4 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
+            <div aria-hidden="true" className="mt-4 h-1.5 w-20 bg-brand-yellow" />
+            <h1 className="mt-5 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
               Calm, modern engineering for web applications.
             </h1>
             <p className="mt-6 max-w-[820px] text-base leading-relaxed text-muted md:text-lg">
@@ -175,7 +176,8 @@ export default function ProductDevelopmentPage() {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
             <Reveal className="md:col-span-4">
               <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Also</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tightish md:text-4xl">Often paired with</h2>
+              <div aria-hidden="true" className="mt-4 h-1.5 w-20 bg-brand-yellow" />
+              <h2 className="mt-5 text-3xl font-semibold tracking-tightish md:text-4xl">Often paired with</h2>
             </Reveal>
 
             <Reveal className="md:col-span-8" delay={0.05}>
