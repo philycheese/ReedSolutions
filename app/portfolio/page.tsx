@@ -30,8 +30,7 @@ export default function PortfolioPage() {
               Software we’ve built
             </h1>
             <p className="mt-6 max-w-[760px] text-sm leading-relaxed text-muted md:text-base">
-              A few example projects to show the kind of work we do. These are placeholders for now —
-              we can replace them with real case studies as you share what’s okay to publish.
+             We're new here... but there's more to come.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <HardLink
