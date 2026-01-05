@@ -8,17 +8,21 @@ export type ProcessStep = {
 
 const defaultSteps = [
   {
-    title: "Pre-engagement",
-    copy: "Initial assessment to understand goals, constraints, and the current system so we can propose a clear path forward.",
+    title: "Assessment",
+    copy: "We start by understanding the problem space: goals, constraints, users, and existing systems. This allows us to identify risks early and define what success actually looks like."
   },
   {
-    title: "Engagement",
-    copy: "We align on scope and milestones, deepen context, and keep decision-making simple with transparent communication.",
+    title: "Ideation",
+    copy: "We translate context into a clear technical direction. Scope, milestones, and trade-offs are agreed collaboratively, with decisions documented and communication kept transparent."
   },
   {
-    title: "Operation",
-    copy: "Incremental releases, monitoring, and continuous improvements—plus support and handover so the system stays healthy.",
+    title: "Creation",
+    copy: "Development happens in small, deliberate increments. You get regular updates, working software early, and direct access to the engineers building your system."
   },
+  {
+    title: "Ownership",
+    copy: "We ship incrementally, monitor in production, and refine over time. When the work is done, you own the system fully—with documentation, handover, and ongoing support if needed."
+  }
 ] as const;
 
 type ProcessStepsProps = {
