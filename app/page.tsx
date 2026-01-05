@@ -97,6 +97,7 @@ export default function HomePage() {
               {
                 title: "Product development",
                 copy: "Web apps, internal tools, and APIs - built to last and easy to own.",
+                href: "/product-development",
                 icon: (
                   <svg
                     aria-hidden="true"
@@ -117,6 +118,7 @@ export default function HomePage() {
               {
                 title: "Integrations",
                 copy: "Bring your tools and platforms together into a single, coherent system.",
+                href: "/integrations",
                 icon: (
                   <svg
                     aria-hidden="true"
@@ -136,6 +138,7 @@ export default function HomePage() {
               {
                 title: "Cloud & modernisation",
                 copy: "Improve performance, security, and operability.",
+                href: "/cloud-modernisation",
                 icon: (
                   <svg
                     aria-hidden="true"
@@ -154,9 +157,10 @@ export default function HomePage() {
                 ),
               },
             ].map((item) => (
-              <div
+              <HardLink
                 key={item.title}
-                className="group rounded-lg border border-line bg-white/60 p-6 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
+                href={item.href}
+                className="group block rounded-lg border border-line bg-white/60 p-6 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/15 bg-accent/10">
@@ -165,7 +169,10 @@ export default function HomePage() {
                   <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.copy}</p>
-              </div>
+                <p className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-ink">
+                  Learn more <span aria-hidden="true">→</span>
+                </p>
+              </HardLink>
             ))}
           </div>
         </Container>
