@@ -95,7 +95,7 @@ export default function HomePage() {
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-12">
             {[
               {
-                title: "Product development",
+                title: "Web development",
                 copy: "Web apps, internal tools, and APIs - built to last and easy to own.",
                 href: "/product-development",
                 icon: (
@@ -112,6 +112,27 @@ export default function HomePage() {
                     <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" />
                     <path d="M8 19v-2m8 2v-2" />
                     <path d="M7 9h10" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Mobile development",
+                copy: "iOS and Android apps that feel fast, polished, and easy to evolve.",
+                href: "/mobile-development",
+                icon: (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M8 4h8" />
+                    <path d="M9 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
+                    <path d="M11 17h2" />
                   </svg>
                 ),
               },
@@ -135,32 +156,11 @@ export default function HomePage() {
                   </svg>
                 ),
               },
-              {
-                title: "Cloud & modernisation",
-                copy: "Improve performance, security, and operability.",
-                href: "/cloud-modernisation",
-                icon: (
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5 text-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.75"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M7.5 18h9a4 4 0 0 0 .4-7.98A6 6 0 0 0 5.2 12.2 3.5 3.5 0 0 0 7.5 18Z" />
-                    <path d="M12 10v6" />
-                    <path d="M9.5 13.5 12 16l2.5-2.5" />
-                  </svg>
-                ),
-              },
             ].map((item) => (
               <HardLink
                 key={item.title}
                 href={item.href}
-                className="group block rounded-lg border border-line bg-white/60 p-6 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
+                className="group relative block rounded-lg border border-line bg-white/60 p-6 pb-14 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/15 bg-accent/10">
@@ -169,9 +169,22 @@ export default function HomePage() {
                   <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{item.copy}</p>
-                <p className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-ink">
-                  Learn more <span aria-hidden="true">→</span>
-                </p>
+                <span className="sr-only">Open {item.title}</span>
+                <span className="absolute bottom-5 right-5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent shadow-hairline transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:shadow-lift motion-reduce:transition-none motion-reduce:transform-none">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 text-white transition-transform duration-200 ease-out group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:transform-none"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h12" />
+                    <path d="m13 6 6 6-6 6" />
+                  </svg>
+                </span>
               </HardLink>
             ))}
           </div>

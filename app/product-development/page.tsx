@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import HardLink from "@/components/HardLink";
 
 export const metadata: Metadata = {
-  title: "Product development — Reed Solutions",
+  title: "Web development — Reed Solutions",
   description:
     "We design and build modern web applications with a pragmatic, high-quality engineering approach: TypeScript, React/Next.js, APIs, and cloud-first delivery.",
 };
@@ -15,7 +15,7 @@ export default function ProductDevelopmentPage() {
       <Section className="pt-10 pb-10 md:pt-16 md:pb-14">
         <Container>
           <Reveal>
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Product development</p>
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">Web development</p>
             <h1 className="mt-4 max-w-[980px] text-4xl font-semibold tracking-tightish md:text-6xl">
               Calm, modern engineering for web applications.
             </h1>
@@ -29,16 +29,16 @@ export default function ProductDevelopmentPage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <HardLink
+                href="/"
+                className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-canvas"
+              >
+                Back
+              </HardLink>
+              <HardLink
                 href="/#contact"
                 className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
               >
-                Talk to us
-              </HardLink>
-              <HardLink
-                href="/portfolio/"
-                className="inline-flex items-center justify-center rounded-lg border border-accent bg-white px-5 py-3 text-sm font-medium text-accent shadow-hairline transition-colors hover:bg-accent hover:text-white"
-              >
-                See our work
+                Get in touch
               </HardLink>
             </div>
           </Reveal>
@@ -192,10 +192,10 @@ export default function ProductDevelopmentPage() {
                     Integrations <span aria-hidden="true">→</span>
                   </HardLink>
                   <HardLink
-                    href="/cloud-modernisation"
+                    href="/mobile-development"
                     className="inline-flex items-center gap-2 text-base font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors hover:decoration-ink md:text-lg"
                   >
-                    Cloud & modernisation <span aria-hidden="true">→</span>
+                    Mobile development <span aria-hidden="true">→</span>
                   </HardLink>
                 </div>
               </div>
