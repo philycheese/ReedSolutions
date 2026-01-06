@@ -4,6 +4,7 @@ import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import ProcessSteps from "@/components/ProcessSteps";
 import HardLink from "@/components/HardLink";
+import CutCornerFrame from "@/components/CutCornerFrame";
 import { contactEmail } from "@/lib/content";
 
 export default function HomePage() {
@@ -25,24 +26,29 @@ export default function HomePage() {
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">We design, build, and maintain your software.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <Link
-                    href="/#contact"
-                    className="cut-corners cut-border-canvas-35 inline-flex items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
-                  >
-                    Get in touch
-                  </Link>
-                  <HardLink
-                    href="/portfolio/"
-                    className="cut-corners cut-border-line inline-flex items-center justify-center bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
-                  >
-                    See our work
-                  </HardLink>
+                  <CutCornerFrame cutPx={10} borderColor="rgba(247, 246, 242, 0.35)" borderWidthPx={1}>
+                    <Link
+                      href="/#contact"
+                      className="inline-flex items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
+                    >
+                      Get in touch
+                    </Link>
+                  </CutCornerFrame>
+
+                  <CutCornerFrame cutPx={10} borderColor="#E8E5DD" borderWidthPx={1}>
+                    <HardLink
+                      href="/portfolio/"
+                      className="inline-flex items-center justify-center bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
+                    >
+                      See our work
+                    </HardLink>
+                  </CutCornerFrame>
                 </div>
               </Reveal>
             </div>
 
             <Reveal className="md:col-span-6" delay={0.08}>
-              <div className="cut-corners relative aspect-[4/3] overflow-hidden bg-canvas">
+              <CutCornerFrame className="aspect-[4/3] bg-canvas" cutPx={12} borderColor="#E8E5DD" borderWidthPx={1}>
                 <Image
                   src="/images/stock3.png"
                   alt="Professionals collaborating on software delivery."
@@ -51,13 +57,13 @@ export default function HomePage() {
                   className="object-contain p-6"
                   sizes="(min-width: 768px) 50vw, 92vw"
                 />
-              </div>
+              </CutCornerFrame>
             </Reveal>
           </div>
 
           <Reveal delay={0.1}>
-            <div className="cut-corners cut-border-line mt-12 overflow-hidden bg-white/70">
-              <div className="h-1.5 bg-brand-yellow" />
+            <CutCornerFrame className="mt-12 overflow-hidden bg-white/70" cutPx={10} borderColor="#E8E5DD" borderWidthPx={1}>
+              <div className="h-1.5 bg-brand-yellow" style={{ clipPath: 'polygon(0 10px, 10px 0, 100% 0, 100% 100%, 0 100%)' }} />
               <div className="px-6 py-10 md:px-10">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
                   {[
@@ -81,7 +87,7 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </CutCornerFrame>
           </Reveal>
         </Container>
       </Section>
@@ -164,35 +170,42 @@ export default function HomePage() {
                 ),
               },
             ].map((item) => (
-              <HardLink
+              <CutCornerFrame
                 key={item.title}
-                href={item.href}
-                className="cut-corners cut-border-line group relative block bg-white/60 p-6 pb-14 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
+                className="md:col-span-4"
+                cutPx={12}
+                borderColor="#E8E5DD"
+                borderWidthPx={1}
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-brand-yellow/40 bg-brand-yellow/20">
-                    {item.icon}
+                <HardLink
+                  href={item.href}
+                  className="group relative block bg-white/60 p-6 pb-14 shadow-hairline transition-shadow hover:shadow-lift"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center border border-brand-yellow/40 bg-brand-yellow/20">
+                      {item.icon}
+                    </div>
+                    <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
                   </div>
-                  <p className="text-sm font-semibold tracking-tightish">{item.title}</p>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.copy}</p>
-                <span className="sr-only">Open {item.title}</span>
-                <span className="absolute bottom-5 right-5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent shadow-hairline transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:shadow-lift motion-reduce:transition-none motion-reduce:transform-none">
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 text-white transition-transform duration-200 ease-out group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:transform-none"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h12" />
-                    <path d="m13 6 6 6-6 6" />
-                  </svg>
-                </span>
-              </HardLink>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{item.copy}</p>
+                  <span className="sr-only">Open {item.title}</span>
+                  <span className="absolute bottom-5 right-5 inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent shadow-hairline transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:scale-110 group-hover:shadow-lift motion-reduce:transition-none motion-reduce:transform-none">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4 text-white transition-transform duration-200 ease-out group-hover:translate-x-0.5 motion-reduce:transition-none motion-reduce:transform-none"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h12" />
+                      <path d="m13 6 6 6-6 6" />
+                    </svg>
+                  </span>
+                </HardLink>
+              </CutCornerFrame>
             ))}
           </div>
         </Container>
@@ -219,7 +232,7 @@ export default function HomePage() {
       <Section id="contact" className="scroll-mt-24">
         <Container>
           <Reveal>
-            <div className="cut-corners cut-border-line relative bg-white/60 p-8 shadow-hairline md:p-10">
+            <CutCornerFrame className="relative bg-white/60 p-8 shadow-hairline md:p-10" cutPx={12} borderColor="#E8E5DD" borderWidthPx={1}>
               <span aria-hidden="true" className="absolute -top-3 left-8 h-1.5 w-20 bg-brand-yellow md:left-10" />
               <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
                 <div className="md:col-span-8">
@@ -233,15 +246,17 @@ export default function HomePage() {
                 </div>
 
                 <div className="md:col-span-4 md:justify-self-end">
-                  <Link
-                    href={`mailto:${contactEmail}?subject=Hello%20Reed%20Solutions`}
-                    className="cut-corners cut-border-canvas-35 inline-flex w-full items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
-                  >
-                    Email us
-                  </Link>
+                  <CutCornerFrame cutPx={10} borderColor="rgba(247, 246, 242, 0.35)" borderWidthPx={1}>
+                    <Link
+                      href={`mailto:${contactEmail}?subject=Hello%20Reed%20Solutions`}
+                      className="inline-flex w-full items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
+                    >
+                      Email us
+                    </Link>
+                  </CutCornerFrame>
                 </div>
               </div>
-            </div>
+            </CutCornerFrame>
           </Reveal>
         </Container>
       </Section>

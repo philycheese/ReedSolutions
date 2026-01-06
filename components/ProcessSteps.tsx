@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import { cn } from "@/lib/cn";
+import CutCornerFrame from "@/components/CutCornerFrame";
 
 export type ProcessStep = {
   title: string;
@@ -39,8 +40,8 @@ export default function ProcessSteps({
   const isDark = variant === "dark";
 
   const cardClassName = cn(
-    "cut-corners h-full p-6",
-    isDark ? "cut-border-white-15 bg-white/10" : "cut-border-line bg-white/50 shadow-hairline"
+    "h-full p-6",
+    isDark ? "bg-white/10" : "bg-white/50 shadow-hairline"
   );
 
   const titleClassName = cn(
@@ -56,13 +57,18 @@ export default function ProcessSteps({
     <div className={cn("grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-6", className)}>
       {steps.map((step, idx) => (
         <Reveal key={step.title} className="md:col-span-3" delay={idx * 0.05}>
-          <div className={cardClassName}>
+          <CutCornerFrame
+            className={cardClassName}
+            cutPx={12}
+            borderColor={isDark ? "rgba(255,255,255,0.18)" : "#E8E5DD"}
+            borderWidthPx={1}
+          >
             <div className="flex items-baseline justify-between">
               <h3 className={titleClassName}>{step.title}</h3>
               <span className={numberClassName}>{String(idx + 1).padStart(2, "0")}</span>
             </div>
             <p className={copyClassName}>{step.copy}</p>
-          </div>
+          </CutCornerFrame>
         </Reveal>
       ))}
     </div>
