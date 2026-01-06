@@ -27,13 +27,13 @@ export default function HomePage() {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link
                     href="/#contact"
-                    className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
+                    className="cut-corners cut-border-canvas-35 inline-flex items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
                   >
                     Get in touch
                   </Link>
                   <HardLink
                     href="/portfolio/"
-                    className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
+                    className="cut-corners cut-border-line inline-flex items-center justify-center bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
                   >
                     See our work
                   </HardLink>
@@ -42,7 +42,7 @@ export default function HomePage() {
             </div>
 
             <Reveal className="md:col-span-6" delay={0.08}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-canvas">
+              <div className="cut-corners relative aspect-[4/3] overflow-hidden bg-canvas">
                 <Image
                   src="/images/stock3.png"
                   alt="Professionals collaborating on software delivery."
@@ -56,7 +56,7 @@ export default function HomePage() {
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-12 overflow-hidden rounded-xl border border-line bg-white/70">
+            <div className="cut-corners cut-border-line mt-12 overflow-hidden bg-white/70">
               <div className="h-1.5 bg-brand-yellow" />
               <div className="px-6 py-10 md:px-10">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
@@ -167,7 +167,7 @@ export default function HomePage() {
               <HardLink
                 key={item.title}
                 href={item.href}
-                className="group relative block rounded-lg border border-line bg-white/60 p-6 pb-14 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
+                className="cut-corners cut-border-line group relative block bg-white/60 p-6 pb-14 shadow-hairline transition-shadow hover:shadow-lift md:col-span-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-md border border-brand-yellow/40 bg-brand-yellow/20">
@@ -219,7 +219,7 @@ export default function HomePage() {
       <Section id="contact" className="scroll-mt-24">
         <Container>
           <Reveal>
-            <div className="relative rounded-lg border border-line bg-white/60 p-8 shadow-hairline md:p-10">
+            <div className="cut-corners cut-border-line relative bg-white/60 p-8 shadow-hairline md:p-10">
               <span aria-hidden="true" className="absolute -top-3 left-8 h-1.5 w-20 bg-brand-yellow md:left-10" />
               <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
                 <div className="md:col-span-8">
@@ -235,7 +235,7 @@ export default function HomePage() {
                 <div className="md:col-span-4 md:justify-self-end">
                   <Link
                     href={`mailto:${contactEmail}?subject=Hello%20Reed%20Solutions`}
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
+                    className="cut-corners cut-border-canvas-35 inline-flex w-full items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
                   >
                     Email us
                   </Link>

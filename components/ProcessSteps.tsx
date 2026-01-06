@@ -39,8 +39,8 @@ export default function ProcessSteps({
   const isDark = variant === "dark";
 
   const cardClassName = cn(
-    "h-full rounded-lg border p-6",
-    isDark ? "border-white/15 bg-white/10" : "border-line bg-white/50 shadow-hairline"
+    "cut-corners h-full p-6",
+    isDark ? "cut-border-white-15 bg-white/10" : "cut-border-line bg-white/50 shadow-hairline"
   );
 
   const titleClassName = cn(
