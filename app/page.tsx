@@ -15,12 +15,12 @@ export default function HomePage() {
             <div className="md:col-span-6">
               <Reveal>
                 <h1 className="text-4xl font-semibold tracking-tightish md:text-6xl">
-                  Custom software, built with you.
+                  We turn your ideas into software.
                 </h1>
               </Reveal>
               <Reveal delay={0.05}>
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-                Reed Solutions is a Swiss-based software studio delivering high-quality custom solutions for teams worldwide. 
+                Reed Solutions is a custom software studio delivering high-quality solutions for teams worldwide. 
                 </p>
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">We design, build, and maintain your software.
                 </p>
@@ -203,7 +203,7 @@ export default function HomePage() {
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-canvas/70">How we do it</p>
             <h2 className="mt-5 text-4xl font-semibold tracking-tightish md:text-6xl">
-              How we do it
+              Our approach
             </h2>
             <p className="mt-6 max-w-[720px] text-sm leading-relaxed text-canvas/70 md:text-base">
               A straightforward delivery approach, keeping things clear along the way.
