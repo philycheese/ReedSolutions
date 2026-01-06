@@ -26,19 +26,19 @@ export default function HomePage() {
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">We design, build, and maintain your software.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5}>
+                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5} className="w-full sm:w-auto sm:inline-block">
                     <Link
                       href="/#contact"
-                      className="inline-flex items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
+                      className="inline-flex w-full items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark sm:w-auto"
                     >
                       Get in touch
                     </Link>
                   </CutCornerFrame>
 
-                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5}>
+                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5} className="w-full sm:w-auto sm:inline-block">
                     <HardLink
                       href="/portfolio/"
-                      className="inline-flex items-center justify-center bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
+                      className="inline-flex w-full items-center justify-center bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80 sm:w-auto"
                     >
                       See our work
                     </HardLink>
