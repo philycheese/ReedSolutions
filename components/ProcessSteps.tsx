@@ -60,8 +60,8 @@ export default function ProcessSteps({
           <CutCornerFrame
             className={cardClassName}
             cutPx={12}
-            borderColor={isDark ? "rgba(255,255,255,0.18)" : "#E8E5DD"}
-            borderWidthPx={1}
+            borderColor={isDark ? "rgba(255,255,255,0.18)" : "#D0CDC4"}
+            borderWidthPx={1.5}
           >
             <div className="flex items-baseline justify-between">
               <h3 className={titleClassName}>{step.title}</h3>

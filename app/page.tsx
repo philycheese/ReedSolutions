@@ -26,7 +26,7 @@ export default function HomePage() {
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">We design, build, and maintain your software.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <CutCornerFrame cutPx={10} borderColor="rgba(247, 246, 242, 0.35)" borderWidthPx={1}>
+                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5}>
                     <Link
                       href="/#contact"
                       className="inline-flex items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
@@ -35,7 +35,7 @@ export default function HomePage() {
                     </Link>
                   </CutCornerFrame>
 
-                  <CutCornerFrame cutPx={10} borderColor="#E8E5DD" borderWidthPx={1}>
+                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5}>
                     <HardLink
                       href="/portfolio/"
                       className="inline-flex items-center justify-center bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
@@ -48,7 +48,7 @@ export default function HomePage() {
             </div>
 
             <Reveal className="md:col-span-6" delay={0.08}>
-              <CutCornerFrame className="aspect-[4/3] bg-canvas" cutPx={12} borderColor="#E8E5DD" borderWidthPx={1}>
+              <div className="relative aspect-[4/3] bg-canvas">
                 <Image
                   src="/images/stock3.png"
                   alt="Professionals collaborating on software delivery."
@@ -57,12 +57,12 @@ export default function HomePage() {
                   className="object-contain p-6"
                   sizes="(min-width: 768px) 50vw, 92vw"
                 />
-              </CutCornerFrame>
+              </div>
             </Reveal>
           </div>
 
           <Reveal delay={0.1}>
-            <CutCornerFrame className="mt-12 overflow-hidden bg-white/70" cutPx={10} borderColor="#E8E5DD" borderWidthPx={1}>
+            <CutCornerFrame className="mt-12 overflow-hidden bg-white/70" cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5}>
               <div className="h-1.5 bg-brand-yellow" style={{ clipPath: 'polygon(0 10px, 10px 0, 100% 0, 100% 100%, 0 100%)' }} />
               <div className="px-6 py-10 md:px-10">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
@@ -174,8 +174,8 @@ export default function HomePage() {
                 key={item.title}
                 className="md:col-span-4"
                 cutPx={12}
-                borderColor="#E8E5DD"
-                borderWidthPx={1}
+                borderColor="#D0CDC4"
+                borderWidthPx={1.5}
               >
                 <HardLink
                   href={item.href}
@@ -232,7 +232,7 @@ export default function HomePage() {
       <Section id="contact" className="scroll-mt-24">
         <Container>
           <Reveal>
-            <CutCornerFrame className="relative bg-white/60 p-8 shadow-hairline md:p-10" cutPx={12} borderColor="#E8E5DD" borderWidthPx={1}>
+            <CutCornerFrame className="relative bg-white/60 p-8 shadow-hairline md:p-10" cutPx={12} borderColor="#D0CDC4" borderWidthPx={1.5}>
               <span aria-hidden="true" className="absolute -top-3 left-8 h-1.5 w-20 bg-brand-yellow md:left-10" />
               <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
                 <div className="md:col-span-8">
@@ -246,7 +246,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="md:col-span-4 md:justify-self-end">
-                  <CutCornerFrame cutPx={10} borderColor="rgba(247, 246, 242, 0.35)" borderWidthPx={1}>
+                  <CutCornerFrame cutPx={10} borderColor="#D0CDC4" borderWidthPx={1.5}>
                     <Link
                       href={`mailto:${contactEmail}?subject=Hello%20Reed%20Solutions`}
                       className="inline-flex w-full items-center justify-center bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
