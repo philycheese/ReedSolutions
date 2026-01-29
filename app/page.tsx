@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import ProcessSteps from "@/components/ProcessSteps";
 import HardLink from "@/components/HardLink";
 import CutCornerFrame from "@/components/CutCornerFrame";
+import HeroAnimation from "@/components/HeroAnimation";
 import { contactEmail } from "@/lib/content";
 
 export default function HomePage() {
@@ -49,14 +49,7 @@ export default function HomePage() {
 
             <Reveal className="md:col-span-6" delay={0.08}>
               <div className="relative aspect-[4/3] bg-canvas">
-                <Image
-                  src="/images/stock3.png"
-                  alt="Professionals collaborating on software delivery."
-                  fill
-                  priority
-                  className="object-contain p-6"
-                  sizes="(min-width: 768px) 50vw, 92vw"
-                />
+                <HeroAnimation className="h-full w-full p-6" />
               </div>
             </Reveal>
           </div>
@@ -216,7 +209,7 @@ export default function HomePage() {
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-canvas/70">How we do it</p>
             <h2 className="mt-5 text-4xl font-semibold tracking-tightish md:text-6xl">
-              Our approach
+              Our approach.
             </h2>
             <p className="mt-6 max-w-[720px] text-sm leading-relaxed text-canvas/70 md:text-base">
               A straightforward delivery approach, keeping things clear along the way.
