@@ -3,6 +3,7 @@ import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import HardLink from "@/components/HardLink";
 import PortfolioTile from "@/components/PortfolioTile";
+import Typewriter from "@/components/Typewriter";
 import { contactEmail } from "@/lib/content";
 
 const projects = [
@@ -27,7 +28,7 @@ export default function PortfolioPage() {
               Portfolio
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tightish md:text-6xl">
-              Software we’ve built
+              <Typewriter text="Software we've built." />
             </h1>
             <p className="mt-6 max-w-[760px] text-sm leading-relaxed text-muted md:text-base">
              We're new here... but there's more to come.

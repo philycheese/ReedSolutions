@@ -45,6 +45,16 @@ const config: Config = {
       maxWidth: {
         content: "1280px",
       },
+      animation: {
+        blink: "blink 0.7s step-end infinite",
+        "blink-slow": "blink 1s step-end infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+      },
     },
   },
   plugins: [],

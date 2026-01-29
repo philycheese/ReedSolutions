@@ -5,6 +5,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import HardLink from "@/components/HardLink";
 import CutCornerFrame from "@/components/CutCornerFrame";
 import HeroAnimation from "@/components/HeroAnimation";
+import Typewriter from "@/components/Typewriter";
 import { contactEmail } from "@/lib/content";
 
 export default function HomePage() {
@@ -14,11 +15,9 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center md:gap-10">
             <div className="md:col-span-6">
-              <Reveal>
-                <h1 className="text-4xl font-semibold tracking-tightish md:text-6xl">
-                  We turn your ideas into software.
-                </h1>
-              </Reveal>
+              <h1 className="text-4xl font-semibold tracking-tightish md:text-6xl">
+                <Typewriter text="We turn your ideas into software." />
+              </h1>
               <Reveal delay={0.05}>
                 <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
                 Reed Solutions is a custom software studio delivering high-quality solutions for teams worldwide. 
