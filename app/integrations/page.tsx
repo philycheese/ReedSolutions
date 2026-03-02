@@ -183,7 +183,7 @@ export default function IntegrationsPage() {
               <div className="space-y-6">
                 <p className="text-base leading-relaxed text-muted md:text-lg">
                   Integrations work best when the surrounding product experience is clear and consistent. We often pair this
-                  work with web and mobile development so everything feels cohesive end-to-end.
+                  work with web development and AI-driven automation so everything feels cohesive end-to-end.
                 </p>
                 <div className="flex flex-col gap-3">
                   <HardLink
@@ -193,10 +193,10 @@ export default function IntegrationsPage() {
                     Web development <span aria-hidden="true">→</span>
                   </HardLink>
                   <HardLink
-                    href="/mobile-development"
+                    href="/ai-and-automation"
                     className="inline-flex items-center gap-2 text-base font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors hover:decoration-ink md:text-lg"
                   >
-                    Mobile development <span aria-hidden="true">→</span>
+                    AI & Automation <span aria-hidden="true">→</span>
                   </HardLink>
                 </div>
               </div>

@@ -121,9 +121,9 @@ export default function HomePage() {
                 ),
               },
               {
-                title: "Mobile development",
-                copy: "iOS and Android apps that feel fast, polished, and easy to evolve.",
-                href: "/mobile-development",
+                title: "AI & Automation",
+                copy: "Map your workflows, automate the repetitive stuff, and layer AI on top when you're ready.",
+                href: "/ai-and-automation",
                 icon: (
                   <svg
                     aria-hidden="true"
@@ -135,9 +135,13 @@ export default function HomePage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="M8 4h8" />
-                    <path d="M9 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-                    <path d="M11 17h2" />
+                    <path d="M12 2a4 4 0 0 1 4 4v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V6a4 4 0 0 1 4-4Z" />
+                    <path d="M9 8v1a3 3 0 0 0 6 0V8" />
+                    <path d="M12 12v4" />
+                    <path d="M8 20h8" />
+                    <path d="M12 16v4" />
+                    <path d="M7 13l-2 2" />
+                    <path d="M17 13l2 2" />
                   </svg>
                 ),
               },

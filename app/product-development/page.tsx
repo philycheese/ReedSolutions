@@ -194,10 +194,10 @@ export default function ProductDevelopmentPage() {
                     Integrations <span aria-hidden="true">→</span>
                   </HardLink>
                   <HardLink
-                    href="/mobile-development"
+                    href="/ai-and-automation"
                     className="inline-flex items-center gap-2 text-base font-medium text-ink underline decoration-transparent underline-offset-4 transition-colors hover:decoration-ink md:text-lg"
                   >
-                    Mobile development <span aria-hidden="true">→</span>
+                    AI & Automation <span aria-hidden="true">→</span>
                   </HardLink>
                 </div>
               </div>
