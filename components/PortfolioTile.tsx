@@ -42,12 +42,16 @@ export default function PortfolioTile({
           "border-accent/20 transition-colors transition-shadow hover:border-accent/40 hover:shadow-lift",
         )}
       >
-        <div className={cn("relative border-b", expanded ? "aspect-[16/8]" : "aspect-[16/10]", "border-accent/15")}>
+        <div className={cn("overflow-hidden border-b", "border-accent/15")}>
           <Image
             src={project.image.src}
             alt={project.image.alt}
-            fill
-            className="object-cover grayscale-[35%] contrast-110 transition-transform duration-500 group-hover:scale-[1.02]"
+            width={1600}
+            height={expanded ? 800 : 1000}
+            className={cn(
+              "w-full object-cover grayscale-[35%] contrast-110 transition-transform duration-500 group-hover:scale-[1.02]",
+              expanded ? "aspect-[16/8]" : "aspect-[16/10]",
+            )}
             sizes={expanded ? "(min-width: 1024px) 70vw, 92vw" : "(min-width: 1024px) 30vw, 92vw"}
             priority={delay === 0}
           />
