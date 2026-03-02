@@ -32,13 +32,13 @@ export default function PortfolioTile({
   }, [project.details]);
 
   return (
-    <Reveal className={cn(expanded ? "md:col-span-12" : "md:col-span-4")} delay={delay}>
+    <Reveal className={cn(expanded ? "md:col-span-8 md:-order-1" : "md:col-span-4")} delay={delay}>
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
         aria-expanded={expanded}
         className={cn(
-          "group w-full overflow-hidden rounded-lg border-4 bg-white/60 text-left shadow-hairline",
+          "group flex h-full w-full flex-col overflow-hidden rounded-lg border-4 bg-white/60 text-left shadow-hairline",
           "border-accent/20 transition-colors transition-shadow hover:border-accent/40 hover:shadow-lift",
         )}
       >
@@ -53,7 +53,7 @@ export default function PortfolioTile({
           />
         </div>
 
-        <div className="space-y-3 p-6">
+        <div className="flex-1 space-y-3 p-6">
           <div className="flex items-start justify-between gap-6">
             <h2 className="text-lg font-semibold tracking-tightish">{project.title}</h2>
             <span className="mt-1 inline-flex items-center gap-2 text-xs font-medium text-accent">
