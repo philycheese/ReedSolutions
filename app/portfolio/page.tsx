@@ -14,7 +14,16 @@ const projects = [
     tags: ["Web App", "Next.js", "Serverless", "Cloud"],
     image: { src: "/images/indi.png", alt: "Abstract placeholder screenshot for an operations dashboard." },
     details:
-      "Indi is a personal care management platform designed to give clients clarity, control, and confidence over their care budgets and support networks.\n\nThe app brings together financial oversight and human coordination in one place. Clients can track their care budget in real time, understand where money is being spent, and manage payments without friction. At the same time, they can meet, organise, and communicate with Personal Assistants (PAs), keeping day-to-day care simple and transparent.\n\nIndi focuses on calm, readable design and practical workflows: clear budget visualisation, straightforward payment history, and intuitive contact and group management. Rather than overwhelming users with complexity, it surfaces the information that matters most, when it matters.\n\nBuilt as a foundation for long-term growth, the platform is designed to evolve alongside changing care needs — supporting ongoing development, new features, and deeper integrations without locking users into rigid systems.\n\nThis project demonstrates how thoughtful UX, robust data handling, and scalable architecture can come together to solve real, human problems through custom software.",
+      "Indi is a personal care management platform designed to give clients clarity, control, and confidence over their care budgets and support networks.\n\nThe app brings together financial oversight and human coordination in one place. Clients can track their care budget in real time, understand where money is being spent, and manage payments without friction. At the same time, they can meet, organise, and communicate with Personal Assistants (PAs), keeping day-to-day care simple and transparent.\n\nIndi focuses on calm, readable design and practical workflows: clear budget visualisation, straightforward payment history, and intuitive contact and group management. Rather than overwhelming users with complexity, it surfaces the information that matters most, when it matters.\n\nBuilt as a foundation for long-term growth, the platform is designed to evolve alongside changing care needs- supporting ongoing development, new features, and deeper integrations without locking users into rigid systems.",
+  },
+  {
+    title: "IP River - global connectivity platform",
+    summary:
+      "IP River is a global connectivity platform enabling partners to quote, provision, and manage business broadband and Ethernet services across multiple carriers worldwide.",
+    tags: ["Connectivity", "API", "Automation", "AI"],
+    image: { src: "/images/ipriver.png", alt: "IP River global connectivity platform dashboard." },
+    details:
+      "IP River is a global connectivity platform enabling partners to quote, provision, and manage business broadband and Ethernet services across multiple carriers worldwide. Through a unified portal and API-driven architecture, IP River aggregates 100+ suppliers into a single operational layer, giving wholesale and enterprise customers streamlined ordering, live tracking, diagnostics, and scalable global network deployment from one system.\n\nThrough our work with IP River, we are leading a strategic shift toward an AI-first, automation-driven operating model. We are architecting an API-centric \"automation spine,\" translating operational expertise into deterministic workflows, and layering intelligent orchestration on top to enable safe, auditable, and scalable execution. From automated supplier tracking and workflow standardisation to AI-assisted operations and custom internal tooling, our focus is on transforming manual processes into resilient, data-driven systems- positioning the business to thrive in an AI-native future.",
   }
 ] as const;
 
@@ -28,7 +37,7 @@ export default function PortfolioPage() {
               Portfolio
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tightish md:text-6xl">
-              <Typewriter text="Software we've built." />
+              <Typewriter text="Companies we're working with" />
             </h1>
             <p className="mt-6 max-w-[760px] text-sm leading-relaxed text-muted md:text-base">
              We're new here... but there's more to come.
@@ -53,7 +62,7 @@ export default function PortfolioPage() {
 
       <Section className="pt-0">
         <Container>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
+          <div className="grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-8">
             {projects.map((project, idx) => (
               <PortfolioTile key={project.title} project={project} delay={idx * 0.05} />
             ))}
