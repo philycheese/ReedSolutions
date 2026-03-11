@@ -99,3 +99,21 @@ body {
     }
   }
 }
+
+/* Print: hide chrome, show only content */
+@media print {
+  body {
+    background: white !important;
+  }
+  header,
+  footer {
+    display: none !important;
+  }
+  .invoice-sheet {
+    font-size: 12pt;
+  }
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+}
