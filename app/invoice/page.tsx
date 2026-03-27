@@ -10,7 +10,7 @@ type LineItem = {
   rate: string;
 };
 
-const CURRENCIES = ["CHF", "GBP", "EUR", "USD"] as const;
+type Currency = "CHF" | "GBP";
 
 export default function InvoicePage() {
   const [invoiceNumber, setInvoiceNumber] = useState("");
@@ -21,7 +21,7 @@ export default function InvoicePage() {
   const [customerAddress, setCustomerAddress] = useState("");
   const [periodStart, setPeriodStart] = useState("");
   const [periodEnd, setPeriodEnd] = useState("");
-  const [currency, setCurrency] = useState("CHF");
+  const [currency, setCurrency] = useState<Currency>("CHF");
   const invoiceRef = useRef<HTMLDivElement>(null);
   const [items, setItems] = useState<LineItem[]>([
     { id: 1, description: "Software Consulting Services", hours: "", rate: "" },
@@ -126,17 +126,22 @@ export default function InvoicePage() {
               </Field>
 
               <Field label="Currency">
-                <select
-                  value={currency}
-                  onChange={(e) => setCurrency(e.target.value)}
-                  className={inputCls}
-                >
-                  {CURRENCIES.map((c) => (
-                    <option key={c} value={c}>
+                <div className="mt-1 flex overflow-hidden border border-line">
+                  {(["CHF", "GBP"] as Currency[]).map((c) => (
+                    <button
+                      key={c}
+                      type="button"
+                      onClick={() => setCurrency(c)}
+                      className={`flex-1 px-4 py-2 text-sm font-medium transition-colors ${
+                        currency === c
+                          ? "bg-ink text-canvas"
+                          : "bg-white text-muted hover:bg-gray-50"
+                      }`}
+                    >
                       {c}
-                    </option>
+                    </button>
                   ))}
-                </select>
+                </div>
               </Field>
 
               <Field label="Customer Name">
@@ -402,7 +407,11 @@ export default function InvoicePage() {
               <p className="text-xs font-medium uppercase tracking-wide text-muted">
                 Payment Details
               </p>
-              <div className="mt-2 grid grid-cols-1 gap-1 text-sm sm:grid-cols-3">
+              <div className="mt-2 grid grid-cols-1 gap-1 text-sm sm:grid-cols-4">
+                <div>
+                  <span className="text-muted">Account Name:</span>{" "}
+                  <span className="font-medium">Philip Reed</span>
+                </div>
                 <div>
                   <span className="text-muted">Sort Code:</span>{" "}
                   <span className="font-medium">20-18-47</span>
