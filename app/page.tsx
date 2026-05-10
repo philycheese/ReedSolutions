@@ -121,24 +121,23 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section id="contact" className="scroll-mt-24">
+      <Section id="contact" className="scroll-mt-24 pt-32 pb-32 md:pt-48 md:pb-48">
         <Container>
           <Reveal>
-            <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-8">
-                <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
-                  Contact
-                </p>
-                <h2 className="mt-6 text-[clamp(2.5rem,7vw,6rem)] font-medium leading-[0.95] tracking-tighter2">
-                  Want to talk?
-                </h2>
-                <p className="mt-8 max-w-[58ch] text-[15px] leading-relaxed text-muted md:text-base">
-                  Send a note with what you’re building and what “success” looks like. We’ll reply with
-                  a clear next step.
-                </p>
-              </div>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+              Contact
+            </p>
+            <h2 className="mt-8 text-[clamp(2.5rem,7vw,6rem)] font-medium leading-[0.95] tracking-tighter2">
+              Want to talk?
+            </h2>
 
-              <div className="md:col-span-4 md:justify-self-end">
+            <div className="mt-12 grid grid-cols-1 gap-10 md:mt-16 md:grid-cols-12 md:items-end md:gap-10">
+              <p className="md:col-span-7 max-w-[58ch] text-[15px] leading-relaxed text-muted md:text-base">
+                Send a note with what you’re building and what “success” looks like. We’ll reply with
+                a clear next step.
+              </p>
+
+              <div className="md:col-span-5 md:justify-self-end">
                 <Link
                   href={`mailto:${contactEmail}?subject=Hello%20Reed%20Solutions`}
                   className="inline-flex items-center justify-center bg-ink px-6 py-4 text-[11px] uppercase tracking-[0.18em] text-canvas transition-colors hover:bg-canvas hover:text-ink hover:outline hover:outline-1 hover:-outline-offset-1 hover:outline-ink"
