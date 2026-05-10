@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import MagneticCursor from "@/components/MagneticCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <NavBar />
         <main id="main">{children}</main>
         <Footer />
+        <MagneticCursor />
       </body>
     </html>
   );

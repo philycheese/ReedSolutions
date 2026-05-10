@@ -1,6 +1,5 @@
 import Reveal from "@/components/Reveal";
 import { cn } from "@/lib/cn";
-import CutCornerFrame from "@/components/CutCornerFrame";
 
 export type ProcessStep = {
   title: string;
@@ -39,39 +38,48 @@ export default function ProcessSteps({
 }: ProcessStepsProps) {
   const isDark = variant === "dark";
 
-  const cardClassName = cn(
-    "h-full p-6",
-    isDark ? "bg-white/10" : "bg-white/50 shadow-hairline"
+  const ruleClassName = cn(
+    "h-px w-full",
+    isDark ? "bg-canvas/30" : "bg-line"
+  );
+
+  const numberClassName = cn(
+    "text-[11px] uppercase tracking-[0.18em]",
+    isDark ? "text-canvas/60" : "text-muted"
   );
 
   const titleClassName = cn(
-    "text-base font-semibold tracking-tightish",
+    "mt-6 text-2xl font-medium tracking-tightish md:text-3xl",
     isDark ? "text-canvas" : "text-ink"
   );
 
-  const copyClassName = cn("mt-3 text-sm leading-relaxed", isDark ? "text-canvas/80" : "text-muted");
-
-  const numberClassName = cn("text-xs font-medium", isDark ? "text-brand-yellow/90" : "text-muted");
+  const copyClassName = cn(
+    "mt-4 text-[14px] leading-relaxed",
+    isDark ? "text-canvas/75" : "text-muted"
+  );
 
   return (
-    <div className={cn("grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-6", className)}>
+    <div className={cn("grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-0", className)}>
       {steps.map((step, idx) => (
-        <Reveal key={step.title} className="md:col-span-3" delay={idx * 0.05}>
-          <CutCornerFrame
-            className={cardClassName}
-            cutPx={12}
-            borderColor={isDark ? "rgba(255,255,255,0.18)" : "#D0CDC4"}
-            borderWidthPx={1.5}
-          >
-            <div className="flex items-baseline justify-between">
-              <h3 className={titleClassName}>{step.title}</h3>
+        <Reveal
+          key={step.title}
+          className={cn(
+            "md:col-span-3 md:px-6",
+            idx > 0 && "md:border-l",
+            isDark ? "md:border-canvas/20" : "md:border-line"
+          )}
+          delay={idx * 0.05}
+        >
+          <div className="pt-6">
+            <div className={ruleClassName} aria-hidden="true" />
+            <div className="mt-4 flex items-baseline justify-between">
               <span className={numberClassName}>{String(idx + 1).padStart(2, "0")}</span>
             </div>
+            <h3 className={titleClassName}>{step.title}</h3>
             <p className={copyClassName}>{step.copy}</p>
-          </CutCornerFrame>
+          </div>
         </Reveal>
       ))}
     </div>
   );
 }
-

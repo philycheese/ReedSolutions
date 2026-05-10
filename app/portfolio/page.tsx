@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Section, { Container } from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import HardLink from "@/components/HardLink";
@@ -30,39 +29,20 @@ const projects = [
 export default function PortfolioPage() {
   return (
     <>
-      <Section className="pt-10 pb-10 md:pt-16 md:pb-14">
+      <Section className="border-b border-line pt-12 pb-12 md:pt-20 md:pb-24">
         <Container>
           <Reveal>
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">
-              Portfolio
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tightish md:text-6xl">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Portfolio</p>
+            <h1 className="mt-6 text-[clamp(2.5rem,7vw,6rem)] font-medium leading-[0.95] tracking-tighter2 text-ink">
               <Typewriter text="Companies we're working with" />
             </h1>
-            <p className="mt-6 max-w-[760px] text-sm leading-relaxed text-muted md:text-base">
-             We're new here... but there's more to come.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <HardLink
-                href="/#contact"
-                className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark"
-              >
-                Get in touch
-              </HardLink>
-              <HardLink
-                href="/"
-                className="inline-flex items-center justify-center rounded-lg border border-line bg-white px-5 py-3 text-sm font-medium text-ink shadow-hairline transition-colors hover:bg-white/80"
-              >
-                Back to home
-              </HardLink>
-            </div>
           </Reveal>
         </Container>
       </Section>
 
-      <Section className="pt-0">
+      <Section className="border-b border-line">
         <Container>
-          <div className="grid max-w-3xl grid-cols-1 gap-6 md:grid-cols-8">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-8 md:gap-x-10 md:gap-y-16">
             {projects.map((project, idx) => (
               <PortfolioTile key={project.title} project={project} delay={idx * 0.05} />
             ))}
@@ -73,25 +53,24 @@ export default function PortfolioPage() {
       <Section className="scroll-mt-24">
         <Container>
           <Reveal>
-            <div className="rounded-lg border border-line bg-white/60 p-8 shadow-hairline md:p-10">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
-                <div className="md:col-span-8">
-                  <h2 className="text-3xl font-semibold tracking-tightish md:text-4xl">
-                    Want to see relevant examples?
-                  </h2>
-                  <p className="mt-4 text-sm leading-relaxed text-muted">
-                    Tell us what you’re building and we’ll share the closest work we can.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 gap-10 border-t border-ink pt-10 md:grid-cols-12 md:items-end md:pt-14">
+              <div className="md:col-span-8">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Contact</p>
+                <h2 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-medium leading-[0.98] tracking-tighter2">
+                  Want to see relevant examples?
+                </h2>
+                <p className="mt-8 max-w-[58ch] text-[15px] leading-relaxed text-muted md:text-base">
+                  Tell us what you’re building and we’ll share the closest work we can.
+                </p>
+              </div>
 
-                <div className="md:col-span-4 md:justify-self-end">
-                  <HardLink
-                    href={`mailto:${contactEmail}?subject=Portfolio%20request`}
-                    className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-medium text-white shadow-hairline transition-colors hover:bg-accent-dark md:w-auto"
-                  >
-                    Email us
-                  </HardLink>
-                </div>
+              <div className="md:col-span-4 md:justify-self-end">
+                <HardLink
+                  href={`mailto:${contactEmail}?subject=Portfolio%20request`}
+                  className="inline-flex items-center justify-center bg-ink px-6 py-4 text-[11px] uppercase tracking-[0.18em] text-canvas transition-colors hover:bg-canvas hover:text-ink hover:outline hover:outline-1 hover:-outline-offset-1 hover:outline-ink"
+                >
+                  Email us
+                </HardLink>
               </div>
             </div>
           </Reveal>
@@ -100,5 +79,3 @@ export default function PortfolioPage() {
     </>
   );
 }
-
-

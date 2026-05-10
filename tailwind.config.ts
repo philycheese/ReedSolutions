@@ -16,34 +16,35 @@ const config: Config = {
     },
     extend: {
       colors: {
-        canvas: "#F7F6F2",
-        ink: "#301830",
-        muted: "#473A41",
-        line: "#E8E5DD",
+        canvas: "#FFFFFF",
+        ink: "#000000",
+        muted: "#737373",
+        line: "#E5E5E5",
         brand: {
-          turquoise: "#90D0C8",
-          yellow: "#E8C020",
-          burgundy: "#301830",
-          burgundySoft: "#382030",
+          turquoise: "#000000",
+          yellow: "#000000",
+          burgundy: "#000000",
+          burgundySoft: "#1A1A1A",
         },
         accent: {
-          DEFAULT: "#0F766E",
-          dark: "#0B5D55",
+          DEFAULT: "#000000",
+          dark: "#1A1A1A",
         },
-        sand: "#D4CFC1",
+        sand: "#A3A3A3",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Helvetica Neue", "Helvetica", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        hairline: "0 1px 0 rgba(48,24,48,0.06)",
-        lift: "0 12px 30px rgba(48,24,48,0.06)",
+        hairline: "none",
+        lift: "none",
       },
       letterSpacing: {
         tightish: "-0.02em",
+        tighter2: "-0.04em",
       },
       maxWidth: {
-        content: "1280px",
+        content: "1440px",
       },
       animation: {
         blink: "blink 0.7s step-end infinite",
@@ -61,4 +62,3 @@ const config: Config = {
 };
 
 export default config;
-

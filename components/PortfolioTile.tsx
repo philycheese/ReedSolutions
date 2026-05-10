@@ -32,87 +32,100 @@ export default function PortfolioTile({
   }, [project.details]);
 
   return (
-    <Reveal className={cn(expanded ? "md:col-span-8 md:-order-1" : "md:col-span-4")} delay={delay}>
-      <button
-        type="button"
-        onClick={() => setExpanded((v) => !v)}
-        aria-expanded={expanded}
+    <Reveal
+      className={cn(expanded ? "md:col-span-8 md:-order-1" : "md:col-span-4")}
+      delay={delay}
+    >
+      <article
         className={cn(
-          "group flex h-full w-full flex-col overflow-hidden rounded-lg border-4 bg-white/60 text-left shadow-hairline",
-          "border-accent/20 transition-colors transition-shadow hover:border-accent/40 hover:shadow-lift",
+          "group flex h-full flex-col border border-ink bg-canvas transition-colors",
         )}
       >
-        <div className={cn("overflow-hidden border-b", "border-accent/15")}>
-          <Image
-            src={project.image.src}
-            alt={project.image.alt}
-            width={1600}
-            height={expanded ? 800 : 1000}
-            className={cn(
-              "w-full object-cover grayscale-[35%] contrast-110 transition-transform duration-500 group-hover:scale-[1.02]",
-              expanded ? "aspect-[16/8]" : "aspect-[16/10]",
-            )}
-            sizes={expanded ? "(min-width: 1024px) 70vw, 92vw" : "(min-width: 1024px) 30vw, 92vw"}
-            priority={delay === 0}
-          />
-        </div>
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          className="flex w-full items-start justify-between gap-6 p-6 text-left md:p-8"
+        >
+          <div className="flex-1 space-y-4">
+            <h2 className="text-xl font-medium tracking-tightish md:text-2xl">
+              {project.title}
+            </h2>
 
-        <div className="flex-1 space-y-3 p-6">
-          <div className="flex items-start justify-between gap-6">
-            <h2 className="text-lg font-semibold tracking-tightish">{project.title}</h2>
-            <span className="mt-1 inline-flex items-center gap-2 text-xs font-medium text-accent">
-              {expanded ? "Collapse" : "Expand"}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                className={cn("h-4 w-4 transition-transform", expanded && "rotate-180")}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 8l5 5 5-5" />
-              </svg>
-            </span>
+            <p className="text-[14px] leading-relaxed text-muted">
+              {project.summary}
+            </p>
+
+            <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[11px] uppercase tracking-[0.18em] text-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <p className="text-sm leading-relaxed text-muted">{project.summary}</p>
+          <span className="mt-1 inline-flex shrink-0 items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-ink">
+            {expanded ? "Collapse" : "Expand"}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              className={cn(
+                "h-3 w-3 transition-transform",
+                expanded && "rotate-180",
+              )}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="square"
+              strokeLinejoin="miter"
+            >
+              <path d="M5 8l5 5 5-5" />
+            </svg>
+          </span>
+        </button>
 
-          <div className="flex flex-wrap gap-2 pt-1">
-            {project.tags.map((tag) => (
-              <span key={tag} className="rounded-md border border-line bg-canvas px-2 py-1 text-xs text-muted">
-                {tag}
-              </span>
-            ))}
-          </div>
+        <AnimatePresence initial={false}>
+          {expanded ? (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
+              className="overflow-hidden border-t border-line"
+            >
+              <div className="px-6 pb-6 pt-6 md:px-8 md:pb-8 md:pt-8">
+                {detailParagraphs.length > 0 ? (
+                  <div className="space-y-4">
+                    {detailParagraphs.map((p) => (
+                      <p
+                        key={p.slice(0, 40)}
+                        className="text-[14px] leading-relaxed text-ink/80 md:text-base md:leading-relaxed"
+                      >
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
 
-          <AnimatePresence initial={false}>
-            {expanded && detailParagraphs.length > 0 ? (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-                className="overflow-hidden pt-4"
-              >
-                <div className="space-y-4 border-t border-accent/15 pt-5">
-                  {detailParagraphs.map((p) => (
-                    <p
-                      key={p.slice(0, 40)}
-                      className="text-sm leading-relaxed text-ink/75 md:text-base md:leading-relaxed"
-                    >
-                      {p}
-                    </p>
-                  ))}
+                <div className="mt-8 overflow-hidden border border-line bg-line">
+                  <Image
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    width={1600}
+                    height={1000}
+                    className="aspect-[16/10] w-full object-cover grayscale"
+                    sizes="(min-width: 1024px) 70vw, 92vw"
+                  />
                 </div>
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
-        </div>
-      </button>
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </article>
     </Reveal>
   );
 }
-
-

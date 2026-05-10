@@ -46,6 +46,7 @@ export default function HeroAnimation({
       aria-label={ariaLabel}
       className={className}
       ref={containerRef}
+      style={{ filter: "grayscale(1) contrast(1.05)" }}
     />
   );
 }
