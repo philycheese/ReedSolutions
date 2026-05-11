@@ -15,28 +15,29 @@ export default function CaseStudyCard({
     <Reveal className={cn(className)}>
       <Link
         href={`/work/${study.slug}`}
-        className={cn(
-          "group block overflow-hidden rounded-lg border border-line bg-white/60 shadow-hairline",
-          "transition-colors hover:bg-white",
-        )}
+        className="group block"
       >
-        <div className="relative aspect-[16/10] border-b border-line">
+        <div className="relative aspect-[16/10] overflow-hidden bg-line">
           <Image
             src={study.image.src}
             alt={study.image.alt}
             fill
-            className="object-cover grayscale-[35%] contrast-110 transition-transform duration-500 group-hover:scale-[1.02]"
+            className="object-cover grayscale transition-transform duration-500 group-hover:scale-[1.02]"
             sizes="(min-width: 1024px) 30vw, 92vw"
           />
         </div>
-        <div className="space-y-3 p-5">
-          <h3 className="text-lg font-semibold tracking-tightish">{study.title}</h3>
-          <p className="text-sm leading-relaxed text-muted">{study.outcome}</p>
-          <div className="flex flex-wrap gap-2 pt-1">
+        <div className="mt-4 space-y-3">
+          <h3 className="text-xl font-medium tracking-tightish md:text-2xl">
+            {study.title}
+          </h3>
+          <p className="text-[14px] leading-relaxed text-muted">
+            {study.outcome}
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
             {study.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-md border border-line bg-canvas px-2 py-1 text-xs text-muted"
+                className="text-[11px] uppercase tracking-[0.18em] text-muted"
               >
                 {tag}
               </span>
@@ -47,4 +48,3 @@ export default function CaseStudyCard({
     </Reveal>
   );
 }
-

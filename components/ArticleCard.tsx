@@ -7,22 +7,25 @@ export default function ArticleCard({ article, delay = 0 }: { article: Insight; 
     <Reveal delay={delay}>
       <Link
         href={`/insights/${article.slug}`}
-        className="group block rounded-lg border border-line bg-white/50 p-6 shadow-hairline transition-colors hover:bg-white"
+        className="group block border-t border-ink py-8"
       >
-        <p className="text-xs font-medium uppercase tracking-[0.16em] text-muted">
+        <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
           {new Date(article.date).toLocaleDateString("en-GB", {
             year: "numeric",
             month: "short",
             day: "2-digit",
           })}
         </p>
-        <h3 className="mt-3 text-lg font-semibold tracking-tightish">{article.title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-muted">{article.excerpt}</p>
-        <p className="mt-5 inline-flex items-center gap-2 text-sm font-medium underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-ink">
+        <h3 className="mt-4 text-2xl font-medium tracking-tightish md:text-3xl">
+          {article.title}
+        </h3>
+        <p className="mt-4 max-w-2xl text-[14px] leading-relaxed text-muted">
+          {article.excerpt}
+        </p>
+        <p className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-ink underline decoration-ink decoration-1 underline-offset-[6px] group-hover:decoration-2">
           Read <span aria-hidden="true">→</span>
         </p>
       </Link>
     </Reveal>
   );
 }
-

@@ -7,22 +7,31 @@ const year = new Date().getFullYear();
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-canvas">
-      <Container className="py-14">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div className="space-y-2 text-sm">
-            <p className="font-semibold tracking-tightish">Reed Solutions</p>
-            <p className="text-muted">© {year}. All rights reserved.</p>
+      <Container className="py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-7">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+              Reed Solutions
+            </p>
+            <p className="mt-4 text-[clamp(1.75rem,3.6vw,2.75rem)] font-medium leading-[0.95] tracking-tighter2 text-ink">
+              St. Gallen, Switzerland
+            </p>
           </div>
 
-          <div className="space-y-2 text-sm md:text-right">
-            <Link className="font-semibold text-muted hover:text-ink" href={`mailto:${contactEmail}`}>
+          <div className="md:col-span-5 md:text-right">
+            <Link
+              className="block text-[15px] text-ink underline decoration-ink decoration-1 underline-offset-[6px] hover:decoration-2"
+              href={`mailto:${contactEmail}`}
+            >
               {contactEmail}
             </Link>
-            <p className="text-muted">St. Gallen, Switzerland</p>
           </div>
+        </div>
+
+        <div className="mt-14 border-t border-line pt-6 text-[11px] uppercase tracking-[0.18em] text-muted">
+          <span>© {year}. All rights reserved.</span>
         </div>
       </Container>
     </footer>
   );
 }
-

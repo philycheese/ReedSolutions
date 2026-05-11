@@ -10,93 +10,99 @@ html {
 body {
   background-color: theme("colors.canvas");
   color: theme("colors.ink");
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(232, 192, 32, 0.28);
+  background: rgba(0, 0, 0, 0.12);
+  color: #000000;
 }
 
-/* Better default focus treatment */
 :focus-visible {
-  outline: 2px solid rgba(232, 192, 32, 0.8);
+  outline: 2px solid #000000;
   outline-offset: 2px;
 }
 
 @layer utilities {
-  /**
-   * Simple "software panel" corners: clip only top-left and bottom-right.
-   * We draw the border via a ::before inset so the outline remains clean.
-   */
-  .cut-corners {
-    --cut: 8px;
-    position: relative;
-    --cut-border: var(--cut-border, #E8E5DD);
-    /* what color to reveal in the clipped corners (defaults to page canvas) */
-    --cut-mask: var(--cut-mask, #F7F6F2);
-    /* Actually clip the element shape so corners are truly cut (including the border). */
-    clip-path: polygon(
-      var(--cut) 0,
-      100% 0,
-      100% calc(100% - var(--cut)),
-      calc(100% - var(--cut)) 100%,
-      0 100%,
-      0 var(--cut)
-    );
-    /*
-     * Draw a consistent 1px "stroke" around the clipped shape using drop-shadows.
-     * This avoids border-join artifacts (diagonals looking thicker) on clip-path polygons.
-     */
-    filter:
-      drop-shadow(1px 0 0 var(--cut-border))
-      drop-shadow(-1px 0 0 var(--cut-border))
-      drop-shadow(0 1px 0 var(--cut-border))
-      drop-shadow(0 -1px 0 var(--cut-border))
-      drop-shadow(1px 1px 0 var(--cut-border))
-      drop-shadow(1px -1px 0 var(--cut-border))
-      drop-shadow(-1px 1px 0 var(--cut-border))
-      drop-shadow(-1px -1px 0 var(--cut-border));
-  }
-
-  .cut-corners::before,
-  .cut-corners::after {
-    content: none;
-  }
-
-  .cut-border-line {
-    --cut-border: #E8E5DD;
-  }
-
-  .cut-border-white-15 {
-    --cut-border: rgba(255, 255, 255, 0.18);
-  }
-
-  .cut-border-canvas-35 {
-    --cut-border: rgba(247, 246, 242, 0.5);
-  }
-
-  .cut-mask-canvas {
-    --cut-mask: #F7F6F2;
-  }
-
-  .cut-mask-accent {
-    --cut-mask: #0F766E;
-  }
-
+  /* Legacy "cut corners" classes — flattened to plain rectangles for the Swiss redesign. */
+  .cut-corners,
+  .cut-border-line,
+  .cut-border-white-15,
+  .cut-border-canvas-35,
+  .cut-mask-canvas,
+  .cut-mask-accent,
   .cut-mask-white-60 {
-    --cut-mask: rgba(255, 255, 255, 0.6);
+    clip-path: none;
+    filter: none;
   }
 
-  @supports not (clip-path: polygon(0 0)) {
-    .cut-corners {
-      clip-path: none;
-    }
-    .cut-corners::before {
-      content: none;
-    }
-    .cut-corners::after {
-      content: none;
-    }
+  .hairline-rule {
+    background-color: theme("colors.line");
+  }
+
+  .swiss-grid {
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+
+  /* Hide the OS cursor when our magnetic cursor is active. */
+  html.cursor-none,
+  html.cursor-none body,
+  html.cursor-none *:not(input):not(textarea):not([contenteditable="true"]) {
+    cursor: none !important;
+  }
+
+  .magnetic-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 100;
+    mix-blend-mode: difference;
+    will-change: transform;
+  }
+
+  .magnetic-cursor__shape {
+    position: relative;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #000;
+    transition: width 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      height 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      padding 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      border-radius 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .magnetic-cursor.magnetic-cursor[data-state="dot"] .magnetic-cursor__shape {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+  }
+
+  .magnetic-cursor.magnetic-cursor[data-state="open"] .magnetic-cursor__shape {
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .magnetic-cursor__arrow {
+    width: 18px;
+    height: 18px;
+    color: #000;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 200ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .magnetic-cursor[data-state="open"] .magnetic-cursor__arrow {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
