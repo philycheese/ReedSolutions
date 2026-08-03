@@ -69,7 +69,7 @@ const workItems = [
 
 export default function AIAndAutomationPage() {
   return (
-    <>
+    <div className="content-page">
       <Section className="border-b border-line pt-12 pb-12 md:pt-20 md:pb-24">
         <Container>
           <Reveal>
@@ -248,6 +248,6 @@ export default function AIAndAutomationPage() {
           </div>
         </Container>
       </Section>
-    </>
+    </div>
   );
 }

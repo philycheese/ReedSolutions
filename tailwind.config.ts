@@ -16,10 +16,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        canvas: "#FFFFFF",
-        ink: "#000000",
-        muted: "#737373",
-        line: "#E5E5E5",
+        canvas: "#E7EAE5",
+        surface: "#DEE4DE",
+        ink: "#17251F",
+        muted: "#5B6761",
+        line: "#C8CFC9",
         brand: {
           turquoise: "#000000",
           yellow: "#000000",
@@ -33,7 +34,7 @@ const config: Config = {
         sand: "#A3A3A3",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Helvetica Neue", "Helvetica", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-roboto)", "Helvetica Neue", "Helvetica", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       boxShadow: {
         hairline: "none",
