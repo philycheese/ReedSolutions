@@ -103,7 +103,12 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
           </h2>
 
           <div className="flex flex-1 items-center">
-            <HoverPreviewList items={links} variant="dark" className="w-full" />
+            <HoverPreviewList
+              items={links}
+              variant="dark"
+              showDividers={false}
+              className="w-full"
+            />
           </div>
         </section>
       </motion.div>

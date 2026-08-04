@@ -13,18 +13,26 @@ type HoverPreviewListProps = {
   items: HoverItem[];
   className?: string;
   variant?: "light" | "dark";
+  showDividers?: boolean;
 };
 
-export default function HoverPreviewList({ items, className, variant = "light" }: HoverPreviewListProps) {
+export default function HoverPreviewList({
+  items,
+  className,
+  variant = "light",
+  showDividers = true,
+}: HoverPreviewListProps) {
   const isDark = variant === "dark";
 
   return (
     <div className={cn("relative", className)}>
-      <ul className={cn("border-t", isDark ? "border-[var(--brand-line)]" : "border-ink")}>
+      <ul className={cn(showDividers && "border-t", showDividers && (isDark ? "border-[var(--brand-line)]" : "border-ink"))}>
         {items.map((item) => {
           const rowClass = cn(
-            "group flex w-full items-center border-b py-5 text-left transition-colors duration-300 md:py-6",
-            isDark ? "border-[var(--brand-line)] text-[var(--brand-text)]" : "border-ink",
+            "group flex w-full items-center py-5 text-left transition-colors duration-300 md:py-6",
+            showDividers && "border-b",
+            showDividers && (isDark ? "border-[var(--brand-line)]" : "border-ink"),
+            isDark && "text-[var(--brand-text)]",
             "px-1 md:px-3",
           );
           const inner = (
