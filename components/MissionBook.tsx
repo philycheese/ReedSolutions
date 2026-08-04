@@ -78,7 +78,6 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
             </p>
             <p className="text-[var(--brand-soft)]">
               <span className="block">Knowledge becomes infrastructure.</span>
-              <span className="block">Processes become products.</span>
               <span className="block">Work becomes executable.</span>
             </p>
             <p>
