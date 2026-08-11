@@ -1,9 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import HoverPreviewList from "@/components/HoverPreviewList";
+import { contactEmail } from "@/lib/content";
 
-const links = [
+const serviceLinks = [
   {
     title: "AI & Automation",
     href: "/ai-and-automation",
@@ -20,10 +22,6 @@ const links = [
     title: "See our work",
     href: "/portfolio/",
   },
-  {
-    title: "Contact",
-    href: "/contact/",
-  },
 ];
 
 type MissionBookProps = {
@@ -32,6 +30,7 @@ type MissionBookProps = {
 
 export default function MissionBook({ showLinks }: MissionBookProps) {
   const reduceMotion = useReducedMotion();
+  const [contactOpen, setContactOpen] = useState(false);
 
   const faceStyle = {
     backfaceVisibility: "hidden" as const,
@@ -53,15 +52,15 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
         <section
           aria-hidden={showLinks}
           inert={showLinks ? true : undefined}
-          className="flex h-full min-h-0 flex-col justify-center overflow-y-auto bg-[var(--brand-bg)] py-8 pr-1 [grid-area:1/1] md:py-12 md:pr-12 lg:pr-20"
+          className="flex h-full min-h-0 flex-col justify-center overflow-y-auto bg-[var(--brand-bg)] py-6 pr-1 [grid-area:1/1] md:py-8 md:pr-12 lg:pr-20"
           style={{ ...faceStyle, pointerEvents: showLinks ? "none" : "auto" }}
         >
           <h2 className="sr-only">
             Our mission
           </h2>
 
-          <div className="space-y-5 text-[15px] leading-[1.7] text-[var(--brand-muted)] md:space-y-6 md:text-[17px] md:leading-[1.7]">
-            <p className="text-[var(--brand-text)]">
+          <div className="space-y-5 text-[clamp(1.05rem,1.2vw,1.25rem)] font-light leading-[1.5] tracking-[-0.018em] text-[var(--brand-muted)] [font-family:'Helvetica_Neue',Helvetica,Arial,sans-serif] md:space-y-6">
+            <p className="max-w-[15ch] text-balance text-[clamp(2rem,2.75vw,3rem)] leading-[1.03] tracking-[-0.05em] text-[var(--brand-text)]">
               Your business is a mesh of logic.
             </p>
             <p>
@@ -76,7 +75,7 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
             <p>
               The familiar boundaries begin to dissolve.
             </p>
-            <p className="text-[var(--brand-soft)]">
+            <p className="text-[clamp(1.25rem,1.6vw,1.7rem)] font-normal leading-[1.35] tracking-[-0.03em] text-[var(--brand-soft)]">
               <span className="block">Knowledge becomes infrastructure.</span>
               <span className="block">Work becomes executable.</span>
             </p>
@@ -86,7 +85,7 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
             <p>
               Your business already contains the blueprint.
             </p>
-            <p className="text-[var(--brand-text)]">
+            <p className="text-[clamp(1.25rem,1.6vw,1.7rem)] leading-[1.3] tracking-[-0.03em] text-[var(--brand-text)]">
               We help you build what it is becoming.
             </p>
           </div>
@@ -103,12 +102,97 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
           </h2>
 
           <div className="flex flex-1 items-center">
-            <HoverPreviewList
-              items={links}
-              variant="dark"
-              showDividers={false}
-              className="w-full"
-            />
+            <div className="relative w-full">
+              <HoverPreviewList
+                items={serviceLinks}
+                variant="dark"
+                showDividers={false}
+                className="w-full"
+              />
+
+              <div className="relative">
+                <AnimatePresence initial={false}>
+                  {contactOpen && (
+                    <motion.div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[calc(100%+138px)] md:h-[calc(100%+176px)]"
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0, transition: { duration: 0.18 } }}
+                    >
+                      <motion.div
+                        className="absolute inset-0 origin-top bg-[var(--brand-text)]"
+                        initial={{ scaleY: 0, opacity: 0 }}
+                        animate={{ scaleY: 1, opacity: 1 }}
+                        transition={{ delay: reduceMotion ? 0 : 0.16, duration: reduceMotion ? 0.01 : 0.48, ease: [0.22, 1, 0.36, 1] }}
+                      />
+                      <motion.span
+                        className="absolute inset-x-0 top-0 h-px origin-left bg-[var(--brand-bg)]"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: reduceMotion ? 0.01 : 0.26, ease: "easeOut" }}
+                      />
+                      <motion.span
+                        className="absolute bottom-0 right-0 top-0 w-px origin-top bg-[var(--brand-bg)]"
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ delay: reduceMotion ? 0 : 0.23, duration: reduceMotion ? 0.01 : 0.3, ease: "easeOut" }}
+                      />
+                      <motion.span
+                        className="absolute inset-x-0 bottom-0 h-px origin-right bg-[var(--brand-bg)]"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ delay: reduceMotion ? 0 : 0.5, duration: reduceMotion ? 0.01 : 0.28, ease: "easeOut" }}
+                      />
+                      <motion.span
+                        className="absolute bottom-0 left-0 top-0 w-px origin-bottom bg-[var(--brand-bg)]"
+                        initial={{ scaleY: 0 }}
+                        animate={{ scaleY: 1 }}
+                        transition={{ delay: reduceMotion ? 0 : 0.75, duration: reduceMotion ? 0.01 : 0.22, ease: "easeOut" }}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <button
+                  type="button"
+                  onClick={() => setContactOpen((open) => !open)}
+                  aria-controls="homepage-contact-panel"
+                  aria-expanded={contactOpen}
+                  data-cursor="open"
+                  className={`group relative z-10 flex w-full items-center px-1 py-5 text-left transition-colors duration-300 md:px-3 md:py-6 ${contactOpen ? "text-[var(--brand-bg)]" : "text-[var(--brand-text)]"}`}
+                >
+                  <span className="block flex-1 text-[clamp(1.25rem,2.6vw,2rem)] font-medium leading-[1.05] tracking-tightish transition-transform duration-300 md:group-hover:translate-x-2">
+                    Contact
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {contactOpen && (
+                    <motion.div
+                      id="homepage-contact-panel"
+                      role="region"
+                      aria-label="Contact Reed Solutions"
+                      className="absolute inset-x-0 top-full z-10 flex h-[138px] flex-col justify-center px-5 text-[var(--brand-bg)] md:h-[176px] md:px-7"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 5, transition: { duration: 0.14 } }}
+                      transition={{ delay: reduceMotion ? 0 : 0.42, duration: reduceMotion ? 0.01 : 0.38 }}
+                    >
+                      <a
+                        href={`mailto:${contactEmail}`}
+                        className="text-[clamp(1.15rem,2.15vw,1.75rem)] font-light leading-none tracking-[-0.035em] transition-opacity hover:opacity-65"
+                      >
+                        {contactEmail}
+                      </a>
+                      <p className="mt-4 text-[12px] tracking-[0.04em] opacity-60 md:text-[13px]">
+                        based in Switzerland
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
           </div>
         </section>
       </motion.div>

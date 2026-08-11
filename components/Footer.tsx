@@ -18,7 +18,7 @@ export default function Footer() {
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--brand-faint)]">
+            <p className="font-brand text-[11px] uppercase tracking-[0.18em] text-[var(--brand-faint)]">
               Reed Solutions
             </p>
             <p className="mt-4 text-[clamp(1.75rem,3.6vw,2.75rem)] font-medium leading-[0.95] tracking-tighter2 text-[var(--brand-text)]">

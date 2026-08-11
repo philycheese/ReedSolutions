@@ -34,7 +34,8 @@ const config: Config = {
         sand: "#A3A3A3",
       },
       fontFamily: {
-        sans: ["var(--font-roboto)", "Helvetica Neue", "Helvetica", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["Helvetica Neue", "Helvetica", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+        brand: ["var(--font-roboto)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
       },
       boxShadow: {
         hairline: "none",

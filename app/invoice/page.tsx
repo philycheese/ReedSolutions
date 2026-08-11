@@ -301,7 +301,7 @@ export default function InvoicePage() {
             {/* Header */}
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-2xl font-semibold tracking-tightish">
+                <p className="font-brand text-2xl font-semibold tracking-tightish">
                   Reed Solutions
                 </p>
                 <address className="mt-2 text-sm not-italic leading-relaxed text-muted">

@@ -7,7 +7,7 @@ export default function NavBar() {
       <Container className="py-5">
         <div className="flex items-baseline justify-between gap-6">
           <HardLink href="/" className="inline-flex items-baseline gap-4">
-            <span className="text-lg font-normal tracking-tightish text-[var(--brand-text)]">
+            <span className="font-brand text-lg font-normal tracking-tightish text-[var(--brand-text)]">
               Reed Solutions
             </span>
             <span className="hidden text-[11px] uppercase tracking-[0.18em] text-[var(--brand-faint)] md:inline">
