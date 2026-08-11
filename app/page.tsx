@@ -9,12 +9,17 @@ export default function HomePage() {
     <div className="home-redesign brand-surface relative">
       <HeroScrollSnap />
       <Section id="hero" className="relative z-10 flex min-h-[calc(100svh-69px)] items-center border-b border-[var(--brand-line)] py-16 [scroll-snap-align:start] [scroll-snap-stop:always]">
-        <ParticleField className="fixed inset-x-0 top-[69px] h-[calc(100svh-69px)] w-full" />
+        <ParticleField
+          className="fixed inset-x-0 top-[69px] h-[calc(100svh-69px)] w-full"
+          density={0.28}
+          intensity={0.38}
+          typingStrength={0.42}
+        />
         <Container className="relative z-10">
           <h1 className="mx-auto w-full max-w-[1120px] whitespace-nowrap text-[clamp(1rem,5vw,4.25rem)] font-light leading-[1.08] tracking-[-0.04em] text-[var(--brand-text)]">
             <Typewriter
               key="hero-particle-typewriter"
-              text="We turn your business into software."
+              text="Turn your business into software."
               typingSpeed={72}
               startDelay={650}
               syncParticles

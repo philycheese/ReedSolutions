@@ -5,6 +5,9 @@ import { cn } from "@/lib/cn";
 
 type ParticleFieldProps = {
   className?: string;
+  density?: number;
+  intensity?: number;
+  typingStrength?: number;
 };
 
 type Particle = {
@@ -35,7 +38,12 @@ function seededRandom(seed: number) {
   };
 }
 
-export default function ParticleField({ className }: ParticleFieldProps) {
+export default function ParticleField({
+  className,
+  density = 1,
+  intensity = 1,
+  typingStrength = 1,
+}: ParticleFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -44,6 +52,7 @@ export default function ParticleField({ className }: ParticleFieldProps) {
 
     const context = canvas.getContext("2d");
     if (!context) return;
+    const normalizedTypingStrength = Math.max(0, Math.min(1, typingStrength));
 
     const themeStyles = window.getComputedStyle(document.documentElement);
     const themeValue = (name: string, fallback: string) =>
@@ -88,7 +97,8 @@ export default function ParticleField({ className }: ParticleFieldProps) {
 
     const createParticles = () => {
       const random = seededRandom(42);
-      const spacing = width < 720 ? 11 : 9;
+      const spacing =
+        (width < 720 ? 11 : 9) / Math.max(0.2, Math.min(1, density));
       const nextParticles: Particle[] = [];
 
       for (let y = -spacing; y <= height + spacing; y += spacing) {
@@ -178,8 +188,14 @@ export default function ParticleField({ className }: ParticleFieldProps) {
               Math.sin(typeDistance * 0.075 - time * 7.2 - typing.progress * 8) *
               influence;
             const push =
-              (influence * (24 + typing.pulse * 34) + wake * 17) * strength;
-            const curl = influence * (16 + typing.pulse * 24) * strength;
+              (influence * (24 + typing.pulse * 34) + wake * 17) *
+              strength *
+              normalizedTypingStrength;
+            const curl =
+              influence *
+              (16 + typing.pulse * 24) *
+              strength *
+              normalizedTypingStrength;
             x += (typeDx / typeDistance) * push - (typeDy / typeDistance) * curl;
             y += (typeDy / typeDistance) * push + (typeDx / typeDistance) * curl;
             typingGlow = influence * (0.32 + typing.pulse * 0.68) * strength;
@@ -256,7 +272,8 @@ export default function ParticleField({ className }: ParticleFieldProps) {
             texture * (0.2 + particle.depth * 0.42) +
             typingGlow * 0.5 +
             (colorIndex >= 3 ? 0.1 : 0)) *
-          edgeFade;
+          edgeFade *
+          Math.max(0, Math.min(1, intensity));
         context.fillStyle = particlePalette[colorIndex];
         const size =
           particle.size *
@@ -326,7 +343,7 @@ export default function ParticleField({ className }: ParticleFieldProps) {
       document.documentElement.removeEventListener("mouseleave", handlePointerLeave);
       reducedMotion.removeEventListener("change", handleMotionPreference);
     };
-  }, []);
+  }, [density, intensity, typingStrength]);
 
   return (
     <canvas
