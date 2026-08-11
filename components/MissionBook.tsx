@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import HoverPreviewList from "@/components/HoverPreviewList";
 import { contactEmail } from "@/lib/content";
@@ -31,6 +31,36 @@ type MissionBookProps = {
 export default function MissionBook({ showLinks }: MissionBookProps) {
   const reduceMotion = useReducedMotion();
   const [contactOpen, setContactOpen] = useState(false);
+  const [copyScale, setCopyScale] = useState(1);
+  const missionFaceRef = useRef<HTMLElement>(null);
+  const missionCopyRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const face = missionFaceRef.current;
+    const copy = missionCopyRef.current;
+    if (!face || !copy) return;
+
+    const fitCopyToViewport = () => {
+      const faceStyles = window.getComputedStyle(face);
+      const verticalPadding =
+        Number.parseFloat(faceStyles.paddingTop) +
+        Number.parseFloat(faceStyles.paddingBottom);
+      const availableHeight = Math.max(1, face.clientHeight - verticalPadding - 8);
+      const naturalHeight = Math.max(1, copy.scrollHeight);
+      const nextScale = Math.min(1, availableHeight / naturalHeight);
+
+      setCopyScale((currentScale) =>
+        Math.abs(currentScale - nextScale) < 0.002 ? currentScale : nextScale,
+      );
+    };
+
+    fitCopyToViewport();
+    const observer = new ResizeObserver(fitCopyToViewport);
+    observer.observe(face);
+    observer.observe(copy);
+
+    return () => observer.disconnect();
+  }, []);
 
   const faceStyle = {
     backfaceVisibility: "hidden" as const,
@@ -50,16 +80,21 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
         }
       >
         <section
+          ref={missionFaceRef}
           aria-hidden={showLinks}
           inert={showLinks ? true : undefined}
-          className="flex h-full min-h-0 flex-col justify-center overflow-y-auto bg-[var(--brand-bg)] py-6 pr-1 [grid-area:1/1] md:py-8 md:pr-12 lg:pr-20"
+          className="flex h-full min-h-0 flex-col justify-center overflow-hidden bg-[var(--brand-bg)] py-6 pr-1 [grid-area:1/1] md:py-8 md:pr-12 lg:pr-20"
           style={{ ...faceStyle, pointerEvents: showLinks ? "none" : "auto" }}
         >
           <h2 className="sr-only">
             Our mission
           </h2>
 
-          <div className="space-y-5 bg-[var(--brand-text)] px-6 py-7 text-[clamp(1.05rem,1.2vw,1.25rem)] font-normal leading-[1.5] tracking-[-0.018em] [color:color-mix(in_srgb,var(--brand-bg)_74%,transparent)] [font-family:'Helvetica_Neue',Helvetica,Arial,sans-serif] md:space-y-6 md:px-8 md:py-9 lg:px-10 lg:py-10">
+          <div
+            ref={missionCopyRef}
+            className="origin-center space-y-5 bg-[var(--brand-text)] px-6 py-7 text-[clamp(1.05rem,1.2vw,1.25rem)] font-normal leading-[1.5] tracking-[-0.018em] [color:color-mix(in_srgb,var(--brand-bg)_74%,transparent)] [font-family:'Helvetica_Neue',Helvetica,Arial,sans-serif] md:space-y-6 md:px-8 md:py-9 lg:px-10 lg:py-10"
+            style={{ transform: `scale(${copyScale})` }}
+          >
             <p className="max-w-[15ch] text-balance text-[clamp(2rem,2.75vw,3rem)] leading-[1.03] tracking-[-0.05em] text-[var(--brand-bg)]">
               Your business is a mesh of logic.
             </p>
