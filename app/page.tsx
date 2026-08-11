@@ -16,7 +16,7 @@ export default function HomePage() {
           typingStrength={0.42}
         />
         <Container className="relative z-10">
-          <h1 className="mx-auto w-full max-w-[1120px] whitespace-nowrap text-[clamp(1rem,5vw,4.25rem)] font-light leading-[1.08] tracking-[-0.04em] text-[var(--brand-text)] [font-family:'Helvetica_Neue',Helvetica,Arial,sans-serif]">
+          <h1 className="mx-auto w-full max-w-[1120px] whitespace-nowrap font-brand text-[clamp(1rem,5vw,4.25rem)] font-light leading-[1.08] tracking-[-0.04em] text-[var(--brand-text)]">
             <Typewriter
               key="hero-particle-typewriter"
               text="Turn your business into software."

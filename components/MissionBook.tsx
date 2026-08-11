@@ -59,7 +59,7 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
             Our mission
           </h2>
 
-          <div className="space-y-5 text-[clamp(1.05rem,1.2vw,1.25rem)] font-light leading-[1.5] tracking-[-0.018em] text-[var(--brand-muted)] [font-family:'Helvetica_Neue',Helvetica,Arial,sans-serif] md:space-y-6">
+          <div className="space-y-5 text-[clamp(1.05rem,1.2vw,1.25rem)] font-normal leading-[1.5] tracking-[-0.018em] text-[var(--brand-muted)] [font-family:'Helvetica_Neue',Helvetica,Arial,sans-serif] md:space-y-6">
             <p className="max-w-[15ch] text-balance text-[clamp(2rem,2.75vw,3rem)] leading-[1.03] tracking-[-0.05em] text-[var(--brand-text)]">
               Your business is a mesh of logic.
             </p>
@@ -75,7 +75,7 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
             <p>
               The familiar boundaries begin to dissolve.
             </p>
-            <p className="text-[clamp(1.25rem,1.6vw,1.7rem)] font-normal leading-[1.35] tracking-[-0.03em] text-[var(--brand-soft)]">
+            <p className="text-[clamp(1.25rem,1.6vw,1.7rem)] font-medium leading-[1.35] tracking-[-0.03em] text-[var(--brand-soft)]">
               <span className="block">Knowledge becomes infrastructure.</span>
               <span className="block">Work becomes executable.</span>
             </p>
@@ -85,7 +85,7 @@ export default function MissionBook({ showLinks }: MissionBookProps) {
             <p>
               Your business already contains the blueprint.
             </p>
-            <p className="text-[clamp(1.25rem,1.6vw,1.7rem)] leading-[1.3] tracking-[-0.03em] text-[var(--brand-text)]">
+            <p className="text-[clamp(1.25rem,1.6vw,1.7rem)] font-medium leading-[1.3] tracking-[-0.03em] text-[var(--brand-text)]">
               We help you build what it is becoming.
             </p>
           </div>
