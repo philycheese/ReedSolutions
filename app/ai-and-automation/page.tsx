@@ -12,16 +12,20 @@ export const metadata: Metadata = {
 const sections = [
   {
     eyebrow: "How we think about it",
-    title: "Automation first. AI second.",
+    title: "Good automation starts with good software.",
     body: [
-      "Most businesses don't need AI right away. They need their existing workflows to stop falling through the cracks. We map out your operations, identify the repetitive stuff, and turn it into reliable, automated processes.",
-      "Once that foundation is solid, adding AI on top becomes straightforward. The AI decides what to do, and your automation spine does it. Deterministically, auditably, and without surprises.",
-      "Get the process right first, then let the machines take over. That way, when AI is involved, it's following a playbook that already works.",
+      "Step one is for human deployment within your team- someone there to gain understanding the workflows, the data and the logic behind operational decisions",
+      "By understanding what exists, we understand what can be improved and optimised- identifying bottlenecks and overly manual processes that can be removed before translating things into software.",
+      "Then we build the infrastructure that automates the heavy lifting without AI involved at all, suddenly a process that required 5 steps and half a day of work happens automatically- you could stop here and enjoy the productivity gains.",
     ],
   },
 ] as const;
 
 const approachItems = [
+  {
+    label: "Human deployment",
+    body: "An engineer works alongside your team to understand your workflows, data and operational logic before anything is automated.",
+  },
   {
     label: "Workflow mapping",
     body: "We document your real processes, not the idealised version. The messy truth is where the gold is.",
@@ -32,7 +36,7 @@ const approachItems = [
   },
   {
     label: "Deterministic automation",
-    body: "Repeatable workflows that run the same way every time. No guesswork, no surprises, just reliable execution.",
+    body: "Repeatable workflows that run the same way every time. No more guesswork, no more dropped balls, just reliable execution.",
   },
   {
     label: "AI orchestration",
@@ -59,11 +63,15 @@ const workItems = [
   },
   {
     label: "Internal tooling",
-    body: "Custom dashboards and command bars that let your team interact with workflows through natural language.",
+    body: "Custom dashboards and command bars that let your team perform new and optimised workflows.",
   },
   {
     label: "Incident correlation",
     body: "Connecting the dots across systems so issues are spotted early and routed to the right people.",
+  },
+  {
+    label: "AI decision-making",
+    body: "AI applies your business logic to routine decisions, moving work forward automatically and surfacing only the decisions that genuinely require human judgement.",
   },
 ] as const;
 
@@ -77,20 +85,21 @@ export default function AIAndAutomationPage() {
               AI & Automation
             </p>
             <h1 className="mt-6 max-w-[18ch] text-[clamp(2.5rem,7vw,6rem)] font-medium leading-[0.95] tracking-tighter2 text-ink">
-              Teach your business to run itself (with guardrails).
+              Teach your business to run itself.
             </h1>
             <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-12">
               <div className="md:col-span-7 md:col-start-6 space-y-6">
                 <p className="text-[15px] leading-relaxed text-muted md:text-[16px]">
-                  AI is exciting. But throwing a chatbot at a messy process just gives you a faster mess.
+                  Today, AI and automation can unlock enormous gains in efficiency, insight and productivity.
                 </p>
                 <p className="text-[15px] leading-relaxed text-muted md:text-[16px]">
-                  We start by understanding how your business actually works. The workflows, the handoffs, the things
-                  people do on autopilot. Then we build the plumbing that lets automation (and eventually AI) do the
-                  heavy lifting safely, predictably, and without anyone losing sleep.
+                  But achieving meaningful results starts with laying the right groundwork. Jumping into automation
+                  without clear processes, reliable data and a focused strategy can simply make existing problems
+                  happen faster, without the possibility of ever really unlocking fifth gear.
                 </p>
                 <p className="text-[15px] leading-relaxed text-muted md:text-[16px]">
-                  Less copy-paste. Fewer dropped balls. More time for the work that actually needs a human brain.
+                  We help you build the foundations first, identify where AI can create genuine value, and introduce
+                  solutions that work for your business.
                 </p>
               </div>
             </div>
@@ -158,9 +167,48 @@ export default function AIAndAutomationPage() {
         <Container>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
             <Reveal className="md:col-span-5">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Why it works</p>
+              <h2 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-medium leading-[0.98] tracking-tighter2">
+                What automation feels like.
+              </h2>
+            </Reveal>
+            <Reveal className="md:col-span-7" delay={0.05}>
+              <div className="space-y-6">
+                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
+                  The first few months are deliberately human. One of our engineers works alongside your team, mapping
+                  workflows and building practical tools that unlock immediate productivity gains month after month.
+                </p>
+                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
+                  The result is real software that you own, built by us, that contains a tangible mapping of your
+                  business logic.
+                </p>
+                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
+                  Old workflows full of manual toil, bottlenecks and pitfalls have been replaced with new workflows of
+                  mostly high level decisions- the things you want an employee to decide.
+                </p>
+                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
+                  This is the moment to add Artificial Intelligence.
+                </p>
+                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
+                  We can embed Intelligence straight into the software- computer assisted decision making happens
+                  silently in the background, workflows execute automatically, automated decisions unblock further
+                  automated workflows- all of a sudden a days worth of old workflows just happened without you
+                  realising- all you see is the decisions reserved for you as the result of finished work bubbles up
+                  for you.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-b border-line">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+            <Reveal className="md:col-span-5">
               <p className="text-[11px] uppercase tracking-[0.18em] text-muted">What this looks like</p>
               <h2 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-medium leading-[0.98] tracking-tighter2">
-                The kind of work we do
+                The capabilities we build into your business.
               </h2>
             </Reveal>
             <Reveal className="md:col-span-7" delay={0.05}>
@@ -176,35 +224,6 @@ export default function AIAndAutomationPage() {
                   </li>
                 ))}
               </ul>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="border-b border-line">
-        <Container>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
-            <Reveal className="md:col-span-5">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Why it works</p>
-              <h2 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-medium leading-[0.98] tracking-tighter2">
-                Safe, boring, brilliant.
-              </h2>
-            </Reveal>
-            <Reveal className="md:col-span-7" delay={0.05}>
-              <div className="space-y-6">
-                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
-                  The best automation is the kind nobody thinks about. It just works. Orders get tracked, customers
-                  get updated, tickets get logged, and your team gets to focus on the interesting problems instead.
-                </p>
-                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
-                  We keep AI on a tight leash. It proposes actions through well-defined workflows with permission
-                  controls, confidence thresholds, and human-in-the-loop approvals where needed. No rogue robots.
-                </p>
-                <p className="text-[15px] leading-relaxed text-muted md:text-[17px]">
-                  The result? A business that gets measurably faster today, while building the foundation for an
-                  AI-native future. Win-win, really.
-                </p>
-              </div>
             </Reveal>
           </div>
         </Container>
