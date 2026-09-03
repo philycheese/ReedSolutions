@@ -12,6 +12,15 @@ type LineItem = {
 
 type Currency = "CHF" | "GBP";
 
+const INDI_PRESET = {
+  name: "Indi",
+  address:
+    "Unit 9 Design Works Business Centre, William Street, Gateshead, England, NE10 0JP",
+  currency: "GBP" as Currency,
+  description: "Software Consulting Services",
+  rate: "30",
+};
+
 export default function InvoicePage() {
   const [invoiceNumber, setInvoiceNumber] = useState("");
   const [invoiceDate, setInvoiceDate] = useState(
@@ -48,6 +57,23 @@ export default function InvoicePage() {
     (parseFloat(item.hours) || 0) * (parseFloat(item.rate) || 0);
 
   const total = items.reduce((sum, item) => sum + itemTotal(item), 0);
+
+  const autofillIndi = () => {
+    setCustomerName(INDI_PRESET.name);
+    setCustomerAddress(INDI_PRESET.address);
+    setCurrency(INDI_PRESET.currency);
+    setItems((prev) =>
+      prev.map((item, index) =>
+        index === 0
+          ? {
+              ...item,
+              description: INDI_PRESET.description,
+              rate: INDI_PRESET.rate,
+            }
+          : item
+      )
+    );
+  };
 
   const dueDate = (() => {
     const d = new Date(invoiceDate + "T00:00:00");
@@ -142,6 +168,16 @@ export default function InvoicePage() {
                     </button>
                   ))}
                 </div>
+              </Field>
+
+              <Field label="Customer Autofill">
+                <button
+                  type="button"
+                  onClick={autofillIndi}
+                  className="mt-1 w-full border border-line bg-white px-4 py-2 text-left text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+                >
+                  Autofill Indi
+                </button>
               </Field>
 
               <Field label="Customer Name">
@@ -305,11 +341,9 @@ export default function InvoicePage() {
                   Reed Solutions
                 </p>
                 <address className="mt-2 text-sm not-italic leading-relaxed text-muted">
-                  Felsenstrasse 95
+                  Aachweg 8
                   <br />
-                  9000 St. Gallen
-                  <br />
-                  Switzerland
+                  Egnach, Thurgau, 9322
                 </address>
               </div>
 
