@@ -11,7 +11,8 @@ const projects = [
     summary:
       "A modern care platform that brings budget management and Personal Assistant coordination together. Indi replaces fragmented tools with clear financial oversight and simple communication. Built to grow alongside real-world care needs.",
     tags: ["Web App", "Next.js", "Serverless", "Cloud"],
-    image: { src: "/images/indi.png", alt: "Indi personal care platform dashboard." },
+    image: { src: "/images/indi.png", alt: "Indi home dashboard showing the monthly care budget, PA team, upcoming shifts and notifications." },
+    website: { href: "https://www.indicare.app", label: "Visit indicare.app" },
     details:
       "Indi is an all in one personal care management platform designed to give clients with disabilities clarity, control, and confidence over their personal assistants, payroll, care budgets and support networks.\n\nThe app brings together financial oversight and human coordination in one place. Clients can track their care budget in real time, understand where money is being spent, and manage payments, payslips and HMRC compliance without barriers. At the same time, they can meet, organise, and communicate with Personal Assistants, keeping day-to-day care simple and transparent.\n\nIndi focuses on calm, readable design and practical workflows: clear budget visualisation, straightforward payment history, and intuitive contact and group management. Rather than overwhelming users with complexity, it surfaces the information that matters most, when it matters.\n\nBuilt as a foundation for long-term growth, the platform is designed to evolve alongside changing care needs- supporting ongoing development, new features, and deeper integrations without locking users into rigid systems.",
   },

@@ -11,6 +11,7 @@ export type PortfolioProject = {
   summary: string;
   tags: readonly string[];
   image: { src: string; alt: string };
+  website?: { href: string; label: string };
   details?: string;
 };
 
@@ -87,6 +88,21 @@ export default function PortfolioTile({
             </svg>
           </span>
         </button>
+
+        {project.website ? (
+          <div className="px-6 pb-6 md:px-8 md:pb-8">
+            <a
+              href={project.website.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-ink underline decoration-ink/40 underline-offset-4 transition-colors hover:decoration-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+            >
+              {project.website.label}
+              <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+        ) : null}
 
         <AnimatePresence initial={false}>
           {expanded ? (
