@@ -120,7 +120,22 @@ export const metadata: Metadata = {
   title: "Reed Solutions — Custom Software Development",
   description:
     "Reed Solutions is a premium custom software studio delivering product engineering, integrations, and cloud systems for growing businesses.",
-  metadataBase: new URL("https://reedsolutions.example"),
+  metadataBase: new URL("https://reedsolutions.ch"),
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      {
+        url: "/favicon.ico",
+        type: "image/x-icon",
+        sizes: "16x16 32x32 48x48 64x64 256x256",
+      },
+    ],
+    apple: {
+      url: "/apple-touch-icon.png",
+      type: "image/png",
+      sizes: "180x180",
+    },
+  },
   openGraph: {
     title: "Reed Solutions",
     description:
