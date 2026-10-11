@@ -10,7 +10,7 @@ export type PortfolioProject = {
   title: string;
   summary: string;
   tags: readonly string[];
-  image: { src: string; alt: string };
+  image: { src: string; alt: string; width?: number; height?: number };
   website?: { href: string; label: string };
   details?: string;
 };
@@ -131,9 +131,14 @@ export default function PortfolioTile({
                   <Image
                     src={project.image.src}
                     alt={project.image.alt}
-                    width={1600}
-                    height={1000}
-                    className="aspect-[16/10] w-full object-cover grayscale"
+                    width={project.image.width ?? 1600}
+                    height={project.image.height ?? 1000}
+                    className={cn(
+                      "w-full grayscale",
+                      project.image.width && project.image.height
+                        ? "h-auto"
+                        : "aspect-[16/10] object-cover",
+                    )}
                     sizes="(min-width: 1024px) 70vw, 92vw"
                   />
                 </div>
