@@ -12,6 +12,10 @@ export const workshopExample = {
     duration: "2 min 01 sec",
     src: `${workshopMedia}/workshop-film.mp4`,
     poster: `${workshopMedia}/poster.png`,
+    portrait: {
+      src: `${workshopMedia}/workshop-film-portrait.mp4`,
+      poster: `${workshopMedia}/poster-portrait.png`,
+    },
     captions: `${workshopMedia}/workshop-captions.vtt`,
   },
   screenshot: {

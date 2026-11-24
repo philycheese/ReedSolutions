@@ -56,6 +56,9 @@
 .featureTitle { max-width: 19ch; font-size: clamp(2rem, 3.3vw, 3.3rem); }
 .film { margin: 0; }
 .film video { display: block; width: 100%; aspect-ratio: 16/9; background: #263b35; }
+@media (max-width: 47.99rem) and (orientation: portrait) {
+  .film[data-portrait] video { aspect-ratio: 4/5; }
+}
 .film figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem .8rem; padding-top: .55rem; }
 .software {
   display: flex;

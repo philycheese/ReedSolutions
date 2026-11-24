@@ -61,3 +61,9 @@ ffmpeg -i captions.srt web-captions.vtt
 - **Launch check.** Run the production build and exercise the actual path from the homepage’s **Integrations** link to the entry and back. Test desktop and phone widths, keyboard activation, playback with sound, direct-entry autoplay restrictions, seeking, caption timing and the enquiry link. Check that images and media load from the public domain. An authorised release to `main` triggers GitHub Pages. Confirm that the deploy job succeeds, then repeat the navigation and media checks on reedsolutions.ch. [Deployment workflow](../.github/workflows/deploy.yml)
 
 For an outreach pack, keep the reframed LinkedIn film, screenshots, one-page brief, website article and ready-to-post copy together in the private demo project. Link the post to the case page so readers land on the workflow they just watched.
+
+### Use the 4:5 cut on portrait phones
+
+Add `film.portrait` with the MP4 `src` and a matching 4:5 `poster`. Give both cuts the same final picture timings, voice track and WebVTT cue times. Apply any late script edits to both compositions before export. The player uses the portrait cut below 48rem in portrait orientation and the wide cut elsewhere. Examples with only a wide film still use that file everywhere.
+
+Open the case on a phone-width portrait viewport and check that only the portrait MP4 loads. Rotate during a spoken sentence, then rotate again while paused. Verify that the time, play/pause state, sound and captions carry across, and that a fresh landscape or desktop visit loads the wide film.
