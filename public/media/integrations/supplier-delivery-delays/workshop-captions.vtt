@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.250
+You run a workshop.
+
+2
+00:00:01.620 --> 00:00:04.570
+A supplier emails to say your bearings will arrive on Thursday.
+
+3
+00:00:05.240 --> 00:00:07.750
+Three customers are waiting. Who needs a call?
+
+4
+00:00:08.640 --> 00:00:10.810
+Originally, you would open Microsoft Outlook,
+
+5
+00:00:11.100 --> 00:00:14.050
+find the supplier’s email and copy the purchase order number.
+
+6
+00:00:14.330 --> 00:00:17.500
+Then you’d open Dynamics 365 Business Central,
+
+7
+00:00:17.710 --> 00:00:18.810
+find that purchase order
+
+8
+00:00:18.810 --> 00:00:21.040
+and check which bearings are arriving late.
+
+9
+00:00:21.530 --> 00:00:23.820
+You’d follow the reservations to the customer orders,
+
+10
+00:00:23.910 --> 00:00:25.250
+check what’s already on the shelf,
+
+11
+00:00:25.250 --> 00:00:27.090
+and compare the new arrival date
+
+12
+00:00:27.090 --> 00:00:28.780
+with the date you promised each customer.
+
+13
+00:00:29.100 --> 00:00:31.830
+Only then could you tell Sales who to call.
+
+14
+00:00:32.200 --> 00:00:33.270
+That takes time.
+
+15
+00:00:33.700 --> 00:00:36.410
+And it’s easy to read the right date off the wrong order.
+
+16
+00:00:36.860 --> 00:00:39.490
+Someone who needed a heads-up could hear nothing at all.
+
+17
+00:00:40.109 --> 00:00:42.219
+With a custom portal from Reed Solutions,
+
+18
+00:00:42.449 --> 00:00:44.099
+those checks happen automatically.
+
+19
+00:00:44.469 --> 00:00:47.259
+When a supplier update lands in your Outlook inbox,
+
+20
+00:00:47.609 --> 00:00:50.319
+AI reads the email and picks out the purchase order,
+
+21
+00:00:50.509 --> 00:00:52.319
+the part and the new delivery date.
+
+22
+00:00:52.827 --> 00:00:54.467
+The integration checks those details
+
+23
+00:00:54.467 --> 00:00:56.657
+against the orders already in Business Central.
+
+24
+00:00:57.007 --> 00:00:59.057
+If the supplier hasn’t given a clear date,
+
+25
+00:00:59.107 --> 00:01:01.097
+it stops and asks someone to check.
+
+26
+00:01:01.437 --> 00:01:04.547
+Here’s what it finds. Lakeside has stock.
+
+27
+00:01:04.651 --> 00:01:05.747
+Jura has time.
+
+28
+00:01:06.057 --> 00:01:08.867
+But 16 bearings are reserved for Limmat Packaging.
+
+29
+00:01:09.317 --> 00:01:12.027
+You promised them Wednesday. The supplier now says Thursday.
+
+30
+00:01:12.877 --> 00:01:14.407
+What happens next is up to you.
+
+31
+00:01:14.777 --> 00:01:17.407
+Prefer a conversation? Flag Limmat for a call,
+
+32
+00:01:17.617 --> 00:01:20.507
+so Sales knows exactly who needs a ring and why.
+
+33
+00:01:21.017 --> 00:01:22.547
+Or choose email or WhatsApp.
+
+34
+00:01:23.097 --> 00:01:25.427
+You can review the message and approve it with a click.
+
+35
+00:01:25.897 --> 00:01:27.067
+Here’s the email for Limmat.
+
+36
+00:01:27.417 --> 00:01:28.767
+Want it handled automatically?
+
+37
+00:01:29.057 --> 00:01:32.087
+Choose WhatsApp, set it to automatic, and save.
+
+38
+00:01:32.577 --> 00:01:35.027
+The next time a confirmed delay affects this order,
+
+39
+00:01:35.317 --> 00:01:37.467
+the same rule takes care of the update for you.
+
+40
+00:01:38.177 --> 00:01:40.207
+Every action is recorded on the order.
+
+41
+00:01:40.537 --> 00:01:42.287
+You can see which update triggered it,
+
+42
+00:01:42.357 --> 00:01:44.907
+whether someone approved it or it ran automatically,
+
+43
+00:01:45.097 --> 00:01:45.987
+and what happened.
+
+44
+00:01:46.367 --> 00:01:49.917
+The same update coming in twice won’t trigger a second message.
+
+45
+00:01:50.576 --> 00:01:54.106
+One late delivery. One customer who needs to know.
+
+46
+00:01:54.326 --> 00:01:56.786
+Your team spends less time on admin,
+
+47
+00:01:56.786 --> 00:02:00.616
+and more time making the decisions that keep the business running.
