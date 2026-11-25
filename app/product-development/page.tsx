@@ -28,35 +28,6 @@ const principles = [
   },
 ] as const;
 
-const coreStack = [
-  { label: "Frontend", body: "Next.js, React, TypeScript" },
-  { label: "UI", body: "Tailwind CSS" },
-  { label: "Auth", body: "Amazon Cognito" },
-  { label: "API", body: "AWS AppSync (GraphQL), Amplify Data" },
-  { label: "Data storage", body: "DynamoDB" },
-  { label: "File storage", body: "S3, Amplify Storage" },
-  { label: "Delivery", body: "AWS Amplify" },
-  { label: "Quality", body: "linting, type checks, targeted tests" },
-] as const;
-
-const additions = [
-  { label: "Testing", body: "Playwright (E2E), Vitest/Jest (unit)" },
-  { label: "CI/CD", body: "GitHub Actions (or your existing pipeline)" },
-  { label: "Observability", body: "CloudWatch, Sentry-style error tracking" },
-  {
-    label: "Security",
-    body: "OWASP-minded hardening, dependency updates, least-privilege access patterns",
-  },
-  {
-    label: "Integrations",
-    body: "webhooks, third-party APIs, internal system connections",
-  },
-  {
-    label: "Product needs",
-    body: "payments (e.g. Stripe), email (e.g. SES), analytics, admin tooling",
-  },
-] as const;
-
 export default function ProductDevelopmentPage() {
   return (
     <div className="content-page">
@@ -101,52 +72,6 @@ export default function ProductDevelopmentPage() {
               <ul className="border-t border-ink">
                 {principles.map((item) => (
                   <li key={item.label} className="grid grid-cols-12 gap-6 border-b border-line py-6">
-                    <span className="col-span-12 text-[11px] uppercase tracking-[0.18em] text-ink md:col-span-4">
-                      {item.label}
-                    </span>
-                    <span className="col-span-12 text-[14px] leading-relaxed text-muted md:col-span-8 md:text-[15px]">
-                      {item.body}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="border-b border-line">
-        <Container>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
-            <Reveal className="md:col-span-5">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Technology</p>
-              <h2 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-medium leading-[0.98] tracking-tighter2">
-                A modern stack, chosen pragmatically.
-              </h2>
-              <p className="mt-8 max-w-[44ch] text-[15px] leading-relaxed text-muted md:text-[16px]">
-                We keep the stack modern and straightforward—proven tools, strong defaults, and a setup that’s easy
-                for your team to maintain.
-              </p>
-            </Reveal>
-            <Reveal className="md:col-span-7" delay={0.05}>
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Core stack</p>
-              <ul className="mt-4 border-t border-ink">
-                {coreStack.map((item) => (
-                  <li key={item.label} className="grid grid-cols-12 gap-6 border-b border-line py-5">
-                    <span className="col-span-12 text-[11px] uppercase tracking-[0.18em] text-ink md:col-span-4">
-                      {item.label}
-                    </span>
-                    <span className="col-span-12 text-[14px] leading-relaxed text-muted md:col-span-8 md:text-[15px]">
-                      {item.body}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-12 text-[11px] uppercase tracking-[0.18em] text-muted">Common additions</p>
-              <ul className="mt-4 border-t border-ink">
-                {additions.map((item) => (
-                  <li key={item.label} className="grid grid-cols-12 gap-6 border-b border-line py-5">
                     <span className="col-span-12 text-[11px] uppercase tracking-[0.18em] text-ink md:col-span-4">
                       {item.label}
                     </span>
