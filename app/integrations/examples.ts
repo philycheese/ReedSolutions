@@ -40,14 +40,14 @@ export const frameCostingExample = {
     burnedInCaptions: true,
     allowMutedAutoplay: true,
     label: "Display frame film",
-    duration: "2 min 01 sec",
-    src: `${frameMedia}/frame-film.mp4`,
+    duration: "2 min 25 sec",
+    src: `${frameMedia}/frame-film.mp4?edit=2`,
     poster: `${frameMedia}/poster.png`,
     portrait: {
-      src: `${frameMedia}/frame-film-portrait.mp4`,
+      src: `${frameMedia}/frame-film-portrait.mp4?edit=2`,
       poster: `${frameMedia}/poster-portrait.png`,
     },
-    captions: `${frameMedia}/frame-captions.vtt`,
+    captions: `${frameMedia}/frame-captions.vtt?edit=2`,
   },
   screenshot: {
     src: `${frameMedia}/cutting-plan.png`,
