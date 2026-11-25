@@ -111,9 +111,6 @@
 .caseIntro { grid-area: copy; }
 .caseTitle { max-width: 17ch; margin-top: .75rem; font-size: clamp(2.5rem, 4.5vw, 4.6rem); }
 .rows > .atRisk { background: #cddbd0; padding-inline: 1rem; }
-.proof { margin-top: 1.5rem; font-size: 1rem; }
-.proof summary { cursor: pointer; min-height: 44px; padding-block: .6rem; font-weight: 500; }
-.proof p { max-width: 65ch; margin-block: .2rem .8rem; color: #425248; }
 @media (max-width: 47.99rem) {
   .intro, .example, .caseOpening, .split, .enquiryGrid { grid-template-columns: minmax(0, 1fr); }
   .caseOpening { grid-template-areas: "copy" "film"; }

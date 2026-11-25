@@ -48,17 +48,11 @@ export default function SupplierDeliveryDelaysPage() {
       <section className={styles.feature}>
         <Container className={styles.split}>
           <div><p className={styles.label}>The result</p><h2 className={styles.sectionTitle}>Three orders.<br />One call.</h2></div>
-          <div>
-            <dl className={styles.rows}>
-              <div><dt>Lakeside Controls</dt><dd>Its 12 bearings are already on the shelf. The delay has no effect on this order.</dd></div>
-              <div className={styles.atRisk}><dt>Limmat Packaging</dt><dd>Its 16 bearings were promised for Wednesday. They arrive on Thursday. Sales gets the flag.</dd></div>
-              <div><dt>Jura Automation</dt><dd>Its 24 bearings are due to the customer on Friday. Thursday’s delivery still meets the promise.</dd></div>
-            </dl>
-            <details className={styles.proof}>
-              <summary>What was tested?</summary>
-              <p>We used fictional orders, a real Outlook test inbox and a Swiss Business Central sandbox. We replayed the AI check locally. In a separate live test, Microsoft Teams received one approved alert. Repeating the check produced no second alert.</p>
-            </details>
-          </div>
+          <dl className={styles.rows}>
+            <div><dt>Lakeside Controls</dt><dd>Its 12 bearings are already on the shelf. The delay has no effect on this order.</dd></div>
+            <div className={styles.atRisk}><dt>Limmat Packaging</dt><dd>Its 16 bearings were promised for Wednesday. They arrive on Thursday. Sales gets the flag.</dd></div>
+            <div><dt>Jura Automation</dt><dd>Its 24 bearings are due to the customer on Friday. Thursday’s delivery still meets the promise.</dd></div>
+          </dl>
         </Container>
       </section>
       <section className={styles.section}>
