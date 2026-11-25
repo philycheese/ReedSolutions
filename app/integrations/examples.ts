@@ -10,10 +10,10 @@ export const workshopExample = {
     title: "One delivery slips. Who needs to know?",
     label: "Workshop film",
     duration: "2 min 01 sec",
-    src: `${workshopMedia}/workshop-film.mp4`,
+    src: `${workshopMedia}/workshop-film.mp4?edit=2`,
     poster: `${workshopMedia}/poster.png`,
     portrait: {
-      src: `${workshopMedia}/workshop-film-portrait.mp4`,
+      src: `${workshopMedia}/workshop-film-portrait.mp4?edit=2`,
       poster: `${workshopMedia}/poster-portrait.png`,
     },
     captions: `${workshopMedia}/workshop-captions.vtt`,
