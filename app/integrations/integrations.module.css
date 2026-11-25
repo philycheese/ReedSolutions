@@ -132,3 +132,4 @@
   white-space: nowrap;
 }
 .playButton:focus-visible { outline: 3px solid #17251f; outline-offset: 3px; }
+.film[data-muted-autoplay] .playButton { top: .65rem; right: .65rem; left: auto; transform: none; }

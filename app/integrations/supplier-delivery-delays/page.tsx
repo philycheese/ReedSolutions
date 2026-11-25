@@ -7,7 +7,7 @@ import IntegrationFilm from "../IntegrationFilm";
 import styles from "../integrations.module.css";
 
 const title = "One delivery slips. Who needs to know?";
-const description = "A workshop example connecting Microsoft Outlook, Dynamics 365 Business Central and WhatsApp to find the customer affected by a supplier delay.";
+const description = "See how a workshop connects Microsoft Outlook, Dynamics 365 Business Central and WhatsApp to check available stock and identify which customers a supplier delay affects.";
 
 export const metadata: Metadata = {
   title: `${title} — Reed Solutions`,

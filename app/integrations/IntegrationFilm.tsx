@@ -13,9 +13,13 @@ type FilmProps = {
   poster: string;
   portrait?: { src: string; poster: string };
   captions: string;
+  burnedInCaptions?: boolean;
+  allowMutedAutoplay?: boolean;
 };
 
-export default function IntegrationFilm({ title, label, duration, src, poster, portrait, captions }: FilmProps) {
+export default function IntegrationFilm({
+  title, label, duration, src, poster, portrait, captions, burnedInCaptions = false, allowMutedAutoplay = false,
+}: FilmProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [needsTap, setNeedsTap] = useState(false);
   const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
@@ -31,7 +35,14 @@ export default function IntegrationFilm({ title, label, duration, src, poster, p
 
     function start(player: HTMLVideoElement) {
       void player.play().catch((error: DOMException) => {
-        if (active && error.name === "NotAllowedError") setNeedsTap(true);
+        if (!active || error.name !== "NotAllowedError") return;
+        setNeedsTap(true);
+        if (allowMutedAutoplay && !player.muted) {
+          player.muted = true;
+          void player.play().catch(() => {
+            // The sound button also starts playback if the browser blocks both attempts.
+          });
+        }
       });
     }
 
@@ -64,7 +75,12 @@ export default function IntegrationFilm({ title, label, duration, src, poster, p
       viewport.removeEventListener("change", switchCut);
       video.removeEventListener("loadedmetadata", restorePlayback);
     };
-  }, [src, poster, portrait, basePath]);
+  }, [src, poster, portrait, basePath, allowMutedAutoplay]);
+
+  function dismissSoundPrompt() {
+    const video = videoRef.current;
+    if (video && !video.paused && !video.muted) setNeedsTap(false);
+  }
 
   function playWithSound() {
     const video = videoRef.current;
@@ -74,18 +90,23 @@ export default function IntegrationFilm({ title, label, duration, src, poster, p
   }
 
   return (
-    <figure className={styles.film} data-portrait={portrait ? true : undefined}>
+    <figure className={styles.film} data-portrait={portrait ? true : undefined} data-muted-autoplay={allowMutedAutoplay || undefined}>
       <div className={styles.player}>
         <video ref={videoRef} aria-label={title} autoPlay controls playsInline preload="metadata"
-          poster={portrait ? undefined : basePath + poster} onPlay={() => setNeedsTap(false)}>
+          poster={portrait ? undefined : basePath + poster} onPlay={dismissSoundPrompt} onVolumeChange={dismissSoundPrompt}>
           {portrait && <source media={phonePortrait} src={basePath + portrait.src} type="video/mp4" />}
           <source src={basePath + src} type="video/mp4" />
-          <track src={basePath + captions} kind="captions" srcLang="en" label="English" />
+          {!burnedInCaptions && <track src={basePath + captions} kind="captions" srcLang="en" label="English" />}
           <a href={basePath + src}>Watch {label.toLowerCase()}</a>
         </video>
         {needsTap && <button type="button" className={styles.playButton} onClick={playWithSound}>Play with sound</button>}
       </div>
-      <figcaption><span>{label}</span><span>{duration} · Captioned</span></figcaption>
+      <figcaption>
+        <span>{label}</span>
+        <span>{duration} · {burnedInCaptions
+          ? <a href={basePath + captions} download className="underline underline-offset-2">Download captions</a>
+          : "Captioned"}</span>
+      </figcaption>
     </figure>
   );
 }
